@@ -1,4 +1,4 @@
-export const App = () => {
+export const App = (props) => {
   return (
     <div
       style={{
@@ -10,7 +10,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
+      {props.children}
     </div>
   );
 };
