@@ -30,9 +30,13 @@ export const AddCardModal = styled.div`
 `;
 
 export const PlusButton = styled.button`
+position: fixed;
+  right: 15px;
+  bottom: 21px;
   width: 52px;
   height: 52px;
   background-color: #FF851C;
+  filter: drop-shadow(0px 0px 4px #FF851C);
   border: none;
   border-radius: 50%;
   font-size: 30px;
@@ -42,6 +46,17 @@ export const PlusButton = styled.button`
 
   &:hover {
     background-color: #00D7FF;
+    filter: drop-shadow(0px 0px 4px #00D7FF);
+  }
+
+  @media (min-width: 768px){
+    right: 23px;
+    bottom: 42px;
+  }
+
+  @media (min-width: 1280px){
+    right: 46px;
+    bottom: 40px;
   }
 `;
 
