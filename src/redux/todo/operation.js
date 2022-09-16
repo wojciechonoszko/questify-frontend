@@ -38,10 +38,14 @@ export const addNewCard = createAsyncThunk(
 );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export const showTodo = createAsyncThunk('todo/get', async (_, thunkAPI) => {
 =======
 export const showTodos = createAsyncThunk('todo/get', async (_, thunkAPI) => {
 >>>>>>> 56f3fee (card)
+=======
+export const showTodo = createAsyncThunk('todo/get', async (_, thunkAPI) => {
+>>>>>>> a7a04a8 (Update operation.js)
     try{
         const { data } = await api.get(
             `${BASE_URL}/todo/all`,
@@ -53,10 +57,14 @@ export const showTodos = createAsyncThunk('todo/get', async (_, thunkAPI) => {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export const showTodoDone = createAsyncThunk(
 =======
 export const showTodosDone = createAsyncThunk(
 >>>>>>> 56f3fee (card)
+=======
+export const showTodoDone = createAsyncThunk(
+>>>>>>> a7a04a8 (Update operation.js)
     'todo/done',
     async (_, thunkAPI) => {
         try {
