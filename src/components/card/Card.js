@@ -203,3 +203,4 @@ const Card = ({ data, card, isNewCard }) => {
      
     )
 }
+
