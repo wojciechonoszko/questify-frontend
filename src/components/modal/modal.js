@@ -4,7 +4,6 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
 import {
-    AddCardModal,
     PlusButton,
     BoxStyle,
     ModalTypography,
@@ -16,7 +15,7 @@ const AddCard = () => {
   const handleClose = () => setOpen(false);
 
   return (
-   <AddCardModal>
+   <>
       <PlusButton onClick={handleOpen}>+</PlusButton>
       <Modal
         open={open}
@@ -34,7 +33,7 @@ const AddCard = () => {
           </ModalTypography>
         </BoxStyle>
       </Modal>
-  </AddCardModal>
+  </>
   );
 }
 export default AddCard;
