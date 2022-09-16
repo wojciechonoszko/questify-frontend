@@ -4,6 +4,7 @@ import { App } from 'components/App';
 import AddCard from 'components/modal/modal';
 import PageHeader from 'components/header/header';
 import PageMain from 'components/main/main';
+import MediaCard from 'components/cardsToday/cardsToday'
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -12,6 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <PageHeader />
       <PageMain />
       <AddCard></AddCard>
+      <MediaCard></MediaCard>
     </App>
   </React.StrictMode>
 );
