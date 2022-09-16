@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
+<<<<<<< HEAD
     deleteTask,
     changeTask,
     deleteNewTask,
@@ -204,3 +205,11 @@ const Card = ({ data, card, isNewCard }) => {
     )
 }
 
+=======
+    deleteTodo,
+    changeTodo,
+    deleteNewTodo,
+    addNewCard,
+    changeTodoStatus,
+} from '../../redux/todos/operation';
+>>>>>>> 56f3fee (card)
