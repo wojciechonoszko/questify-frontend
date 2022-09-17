@@ -8,3 +8,12 @@ import {
     addNewCard,
     changeTodoStatus,
 } from '../../redux/todos/operation';
+
+import { newTodoCard } from '../../redux/todo/todoSelector';
+
+// import Modals from '../modals'
+
+import TimeDatePicker from '../timePickers/';
+import dateAdapted from '../TimePickers/dateAdapted';
+import CompletedChallenge from '../CompletedChallenge';
+import CompletedCard from '../CompletedCard/CompletedCard';
