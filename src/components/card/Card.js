@@ -212,4 +212,16 @@ const Card = ({ data, card, isNewCard }) => {
     addNewCard,
     changeTodoStatus,
 } from '../../redux/todos/operation';
+<<<<<<< HEAD
 >>>>>>> 56f3fee (card)
+=======
+
+import { newTodoCard } from '../../redux/todo/todoSelector';
+
+// import Modals from '../modals'
+
+import TimeDatePicker from '../timePickers/';
+import dateAdapted from '../TimePickers/dateAdapted';
+import CompletedChallenge from '../CompletedChallenge';
+import CompletedCard from '../CompletedCard/CompletedCard';
+>>>>>>> 062dc66 (update card and add time picker)
