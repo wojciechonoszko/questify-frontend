@@ -8,6 +8,9 @@
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4c573ad (add mui bundles)
     "@material/textfield": "^14.0.0",
     "@mui/base": "^5.0.0-alpha.91",
     "@mui/icons-material": "^5.10.3",

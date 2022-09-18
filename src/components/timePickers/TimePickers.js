@@ -3,10 +3,16 @@ import {AdapterDateFns} from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 // import { LocalizationProvider } from '@mui/lab';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+=======
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import {LocalizationProvider} from '@mui/lab';
+import { DateTimePicker } from '@mui/lab';
+>>>>>>> 4c573ad (add mui bundles)
 import { useState } from 'react';
 
 import styles from './TimePickers.module.css';
 
+<<<<<<< HEAD
 export default function DateAndTimePicker({ time }) {
   const [value, setValue] = useState('week');
 
@@ -85,3 +91,5 @@ export default function DateAndTimePicker({ time }) {
     </div>
   );
 }
+=======
+>>>>>>> 4c573ad (add mui bundles)
