@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import api from '../user/interceptor';
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+const baseUrl = process.env.reactAppBaseUrl;
 
 export const addCardToState = createAsyncThunk(
-    'todo/addCard',
+    'task/addCard',
     async (type, thunkAPI) => {
         return {
             title: '',
@@ -15,20 +15,20 @@ export const addCardToState = createAsyncThunk(
     },
 );
 
-export const deleteNewTodo = createAsyncThunk(
-    'todo/deleteNewTodo',
+export const deleteNewTask = createAsyncThunk(
+    'task/deleteNewTask',
     async (_, thunkAPI) => {
         return null;
     },
 );
 
 export const addNewCard = createAsyncThunk(
-    'todo/addNewCard',
-    async (todo, thunkAPI) => {
+    'task/addNewCard',
+    async (task, thunkAPI) => {
         try {
             const { data } = await api.post(
-                `${BASE_URL}/todo/add`,
-                todo,
+                `${baseUrl}/task/add`,
+                task,
             );
             return data;
             } catch (error){
@@ -37,10 +37,10 @@ export const addNewCard = createAsyncThunk(
     },
 );
 
-export const showTodo = createAsyncThunk('todo/get', async (_, thunkAPI) => {
+export const showTask = createAsyncThunk('task/get', async (_, thunkAPI) => {
     try{
         const { data } = await api.get(
-            `${BASE_URL}/todo/all`,
+            `${baseUrl}/task/all`,
         );
         return data;
     } catch (error) {
@@ -48,12 +48,12 @@ export const showTodo = createAsyncThunk('todo/get', async (_, thunkAPI) => {
     }
 });
 
-export const showTodoDone = createAsyncThunk(
-    'todo/done',
+export const showTaskDone = createAsyncThunk(
+    'task/done',
     async (_, thunkAPI) => {
         try {
             const { data } = await api.get(
-            `${BASE_URL}/todo/done`,
+            `${baseUrl}/task/done`,
             );
             return data;
         } catch (error) {
@@ -62,12 +62,12 @@ export const showTodoDone = createAsyncThunk(
     },
 );
 
-export const showTodoActive = createAsyncThunk(
-    'todo/active',
+export const showTaskActive = createAsyncThunk(
+    'task/active',
     async (_, thunkAPI) => {
         try {
             const { data } = await api.get(
-            `${BASE_URL}/todo/active`,
+            `${baseUrl}/task/active`,
             );
             return data;
         } catch (error) {
@@ -76,11 +76,11 @@ export const showTodoActive = createAsyncThunk(
     },
 );
 
-export const addTodo = createAsyncThunk('todo/add', async (todo, thunkAPI) => {
+export const addTask = createAsyncThunk('task/add', async (task, thunkAPI) => {
     try {
         const { data } = await api.post(
-            `${BASE_URL}/todo/add`,
-            todo,
+            `${baseUrl}/task/add`,
+            task,
         );
         return data;
     }catch (error) {
@@ -88,12 +88,12 @@ export const addTodo = createAsyncThunk('todo/add', async (todo, thunkAPI) => {
     }
 });
 
-export const changeTodoStatus = createAsyncThunk(
-    'todo/changeStatus',
+export const changeTaskStatus = createAsyncThunk(
+    'task/changeStatus',
     async ({ id, isActive }, thunkAPI) => {
         try {
             const { data } = await api.patch(
-                `${BASE_URL}/todo/status/${id}`,
+                `${baseUrl}/task/status/${id}`,
                 { isActive: isActive },
             );
             return data;
@@ -103,12 +103,12 @@ export const changeTodoStatus = createAsyncThunk(
     }
 );
 
-export const changeTodo = createAsyncThunk(
-    'todo/change',
+export const changeTask = createAsyncThunk(
+    'task/change',
     async ({ id, ...item }, thunkAPI) => {
         try {
             const { data } = await api.put(
-                `${BASE_URL}/todo/update/${id}`,
+                `${baseUrl}/task/update/${id}`,
                 item,
             );
             return data;
@@ -118,12 +118,12 @@ export const changeTodo = createAsyncThunk(
     },
 );
 
-export const deleteTodo = createAsyncThunk(
-    'todo/delete',
+export const deleteTask = createAsyncThunk(
+    'task/delete',
     async (id, thunkAPI) => {
         try {
             await api.delete(
-                `${BASE_URL}/todo/remove/${id}`,
+                `${baseUrl}/task/remove/${id}`,
                 id,
             );
             return id;
