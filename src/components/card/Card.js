@@ -9,7 +9,7 @@ import {
     changeTodoStatus,
 } from '../../redux/todos/operation';
 
-import { newTodoCard } from '../../redux/todo/todoSelector';
+import { newTodoCard } from '../../redux/task/taskSelector';
 
 // import Modals from '../modals'
 
