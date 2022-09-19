@@ -1,4 +1,5 @@
 import TextField from '@mui/material/TextField';
+<<<<<<< HEAD
 import {AdapterDateFns} from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 // import { LocalizationProvider } from '@mui/lab';
@@ -6,6 +7,11 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 =======
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import { LocalizationProvider } from '@mui/lab';
+=======
+import AdapterDateFns from '@mui/x-date-pickers';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+// import { LocalizationProvider } from '@mui/lab';
+>>>>>>> 778541e (time picker)
 import { DateTimePicker } from '@mui/lab';
 >>>>>>> 4c573ad (add mui bundles)
 import { useState } from 'react';
@@ -29,6 +35,9 @@ export default function DateAndTimePicker({ time }) {
       'Friday',
       'Saturday',
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 778541e (time picker)
     ];
     const monthNames = [
       'January',
@@ -67,6 +76,7 @@ export default function DateAndTimePicker({ time }) {
     }
     setValue({ dayName });
     time({ time: times, dayName, data });
+<<<<<<< HEAD
   };
 
 
@@ -116,3 +126,33 @@ export default function DateAndTimePicker({ time }) {
   };
 }
 >>>>>>> f413d6e (change on task)
+=======
+  };
+
+
+  return (
+    <div className={styles.rooter}>
+      <LocalizationProvider className={styles.rooter} dateAdapter={AdapterDateFns}>
+        <DateTimePicker
+          renderInput={props => <TextField {...props} />}
+          value={value}
+          onChange={onChange}
+          ampm={false}
+          ampmInClock={true}
+          className={styles.rooter}
+          clearable={true}
+          hideTabs={true}
+          disableHighlightToday={true}
+          disableMaskedInput={true}
+          disableCloseOnSelect={false}
+          disablePast={true}
+          loading={false}
+          showTodayButton={true}
+          showToolbar={true}
+          FormControlContext={false}
+        ></DateTimePicker>
+      </LocalizationProvider>
+    </div>
+  );
+}
+>>>>>>> 778541e (time picker)

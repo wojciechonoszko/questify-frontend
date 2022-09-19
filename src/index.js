@@ -10,7 +10,11 @@ import DateAndTimePicker from 'components/timePickers/TimePickers';
 
 =======
 import MediaCard from 'components/cardsToday/cardsToday'
+<<<<<<< HEAD
 >>>>>>> 56f3fee (card)
+=======
+import DateAndTimePicker from 'components/timePickers/TimePickers'
+>>>>>>> 778541e (time picker)
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -21,9 +25,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <AddCard></AddCard>
       <MediaCard></MediaCard>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <DateAndTimePicker />
 =======
 >>>>>>> 56f3fee (card)
+=======
+      <DateAndTimePicker></DateAndTimePicker>
+>>>>>>> 778541e (time picker)
     </App>
   </React.StrictMode>
 );
