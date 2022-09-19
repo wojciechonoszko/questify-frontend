@@ -1,3 +1,4 @@
+
 {
   "name": "questify-frontend",
   "version": "0.1.0",
@@ -9,12 +10,15 @@
     "@material/textfield": "^14.0.0",
     "@mui/base": "^5.0.0-alpha.91",
     "@mui/icons-material": "^5.10.3",
+    "@mui/lab": "^5.0.0-alpha.99",
     "@mui/material": "^5.9.2",
+    "@mui/x-date-pickers": "^5.0.2",
     "@reduxjs/toolkit": "^1.8.3",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "date-fns": "^2.29.3",
     "notiflix": "^3.2.5",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
