@@ -5,7 +5,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 =======
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import {LocalizationProvider} from '@mui/lab';
+import { LocalizationProvider } from '@mui/lab';
 import { DateTimePicker } from '@mui/lab';
 >>>>>>> 4c573ad (add mui bundles)
 import { useState } from 'react';
@@ -13,6 +13,9 @@ import { useState } from 'react';
 import styles from './TimePickers.module.css';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f413d6e (change on task)
 export default function DateAndTimePicker({ time }) {
   const [value, setValue] = useState('week');
 
@@ -25,6 +28,7 @@ export default function DateAndTimePicker({ time }) {
       'Thursday',
       'Friday',
       'Saturday',
+<<<<<<< HEAD
     ];
     const monthNames = [
       'January',
@@ -93,3 +97,22 @@ export default function DateAndTimePicker({ time }) {
 }
 =======
 >>>>>>> 4c573ad (add mui bundles)
+=======
+      ];
+      const monthNames = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ];
+  };
+}
+>>>>>>> f413d6e (change on task)

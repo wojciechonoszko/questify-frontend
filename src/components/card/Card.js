@@ -216,7 +216,7 @@ const Card = ({ data, card, isNewCard }) => {
 >>>>>>> 56f3fee (card)
 =======
 
-import { newTodoCard } from '../../redux/todo/todoSelector';
+import { newTodoCard } from '../../redux/task/taskSelector';
 
 // import Modals from '../modals'
 
