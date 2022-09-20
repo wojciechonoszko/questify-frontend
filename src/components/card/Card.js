@@ -14,6 +14,9 @@ import {
 import { newTaskCard } from '../../redux/task/taskSelector';
 
 // import Modals from '../modals'
+// difficultModal
+// deletemodal
+// categoryModal
 
 import TimeDatePicker from '../timePickers/';
 import dateAdapted from '../TimePickers/dateAdapted';
