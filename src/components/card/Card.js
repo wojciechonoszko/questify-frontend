@@ -193,6 +193,69 @@ const Card = ({ data, card, isNewCard }) => {
                                 </span>
                             )}
 
+                            {card.type === 'CHALLENGE' ? (
+                                <img
+                                    src={trophy}
+                                    alt=""
+                                    className={card.isActive ? styles.cardCategoryStart : styles.cardCategoryStart_inactive}
+                                    onClick={changeCompleted}
+                                />
+                            ) : (
+                                    <span
+                                        className={
+                                            card.isActive
+                                                ? styles.cardCategoryStart
+                                                : styles.cardCategoryStart_inactive
+                                        }
+                                        onClick={changeCompleted}
+                                    >
+                                        {' '}
+                                        &#9733;
+                                    </span>
+                            )}
+                        </p>
+                        {edit && !isNewCard && <p className={styles.editTitle}>edit quest</p>}
+                        {isNewCard && <p className={styles.editTitle}> Creat New Quest</p>}
+
+                        {isNewCard || edit ? (
+                            <form className={styles.form}>
+                                <input
+                                    autoFocus
+                                    className={`${styles.input} ${card.type === 'CHALLENGE' && styles.inputChallenge}`}
+                                    type='text'
+                                value={value}
+                                    onChange={changeValue}
+                                />
+                            </form>
+                        ) : (
+                                <>
+                                    {card.type === 'CHALLENGE' ? (
+                                        <h2 className= {styles.challengeHeader}>CHALLENGE</h2>)
+                                ) : (
+                                    <span className = {styles.taskHeader}>TASK</span>
+                                )}
+                                    <h2
+                                        className={`${styles.cardTitle} ${
+                                            card.type === 'CHALLENGE' && styles.cardTitle_challenge
+                                            }`}
+                                    >
+                                        {card.title}
+                                    </h2>
+                                </>
+                        )}
+
+                        <div className={styles.cardDate}>
+                            <p className={styles.timeText}>
+
+                                {timeDate.dayName}
+                                {!edit && !isNewCard && <>,&nbsp;{timeDate.time}</>}
+                            </p>
+                            {edit && <TimeDatePicker time={takeTime}/>}
+                            {isNewCard && <TimeDatePicker time={takeTime}/>}
+                        </div>
+
+                        
+
 
 
 
