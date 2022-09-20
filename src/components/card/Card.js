@@ -252,7 +252,33 @@ const Card = ({ data, card, isNewCard }) => {
                             {isNewCard && <TimeDatePicker time={takeTime}/>}
                         </div>
 
-                        
+                        <div className={styles.bottomMenu}>
+                            {edit ? (
+                                <>
+                                    <p
+                                        className={`${styles.cardType} ${categoryCard.toLowerCase()}`}
+                                        onClick={categoryModalHandler}
+                                    >
+                                        {categoryCard}
+                                    </p>
+                                </>
+                            ) : (
+                                    <>
+                                        <p
+                                        className = {`${styles.cardType}
+                                            ${card.category === 'LEARNING' && styles.learning}
+                                            ${card.category === 'LEISURE' && styles.leisure}
+                                            ${card.category === 'FAMILY' && styles.family}
+                                            ${card.category === 'HEALTH' && styles.health}
+                                            ${card.category === 'STUFF' && styles.stuff}
+                                            ${card.category === 'WORK' && styles.work}
+                                            ${!card.isActive && styles.inactiveCard}
+                                        `}
+                                    </>
+                            )}
+                        </div>
+
+
 
 
 
