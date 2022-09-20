@@ -85,7 +85,121 @@ const Card = ({ data, card, isNewCard }) => {
     const closeAndSave = () => {
         setEdit(false);
 
-        
+        const newCard = {
+            level: difficult,
+            title: value,
+            time: timeDate.data || card.time,
+            category: categoryCart,
+            type: card.type,
+            isActive: true,
+        };
+            dispatch(changeTask({ id: card._id, ...newCard }));
+    };
+
+    const deleteNewCard = () => {
+        dispatch(deleteNewTask());
+    };
+
+    const addNewTask = () => {
+        dispatch(
+            addNewCard({
+                title: value,
+                category: categoryCard,
+                type: cardFromState.type,
+                time: timeDate.data,
+                level: difficult,
+            }),
+        );
+        const adapted = dateAdapted(timeDate.data);
+        setTimeDate(adapted);
+    };
+
+
+    const addTaskDone = () => {
+        dispatch(changeTaskStatus({ id: card._id, isActive: false }));
+    };
+
+    function changeType(data) {
+        setCategoryCard(data);
+        categoryModalHandler();
     }
 
+    function takeTime(date) {
+        setTimeDate(date);
+    }
+
+    const changeCompleted = () => {
+        if (!card.isActive) {
+            return;
+        }
+        setCompleted(true);
+    };
+
+    return (
+        <>
+            {completed ? (
+                card.type === 'TASK' ? (
+                    <CompletedCard
+                        change={addTaskDone}
+                        title={card.title}
+                        id={card._id}
+                    />
+                ) : (
+                    <CompletedChallenge
+                        change={addTaskDone}
+                        title={card.title}
+                        id={card._id}
+                    />
+                ) : (
+                <li
+                    className={`${styles.card} ${card.type === 'CHALLENGE' ? styles.challenge : styles.task}`}
+                    onClick={oneEdit}
+                >
+                    {card.isActive && modal && <DifficultModal change={change} />}
+                    {deleteModal && <DeleteModule change={deleteHandler} />}
+                    {card.isActive && categoryModal && (<CategoryModal change={changeType} />
+                    )}
+
+                    <p className={styles.cardCategoryName}>
+                            {edit ? (
+                                <>
+                                    <span
+                                        className={(styles.cardCategoryCircle,
+                                            difficult === 'Normal'
+                                                ? styles.secondOption
+                                                : difficult === 'Hard'
+                                                    ? styles.thirdOption
+                                                    : styles.firstOption)
+                                        }
+                                    > &#9679; </span>
+                    
+                                    <span className={styles.cardCategory} onClick={onClick}>
+                                        {difficult}
+                                    </span>
+                                </>
+                            ) : (
+                        
+                                <span className={card.isActive ? styles.setLevel : styles.inactiveCard} onClick={onClick}>
+                                    <span className={(styles.cardCategoryCircle,
+                                        difficult === 'Normal'
+                                            ? s.secondOption
+                                            : difficult === 'Hard'
+                                                ? s.thirdOption
+                                                : s.firstOption)
+                                    }>&#9679; </span>
+                                    <span className={styles.cardCategory}>{difficult}</span>
+                                </span>
+                            )}
+
+
+
+
+
+                            
+
+                
+                        
+                        
+     
+    )
 }
