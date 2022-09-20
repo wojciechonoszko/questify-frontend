@@ -41,23 +41,6 @@ export const UserAccountDiv = styled.div`
   gap: 10px;
 `;
 
-export const UserIcon = styled.div`
-  width: 30px;
-  height: 30px;
-  background-color: #3E4E6C;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'HelveticaNeueCyr';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 17px;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-  color: #FFFFFF;
-`;
-
 export const UserName = styled.p`
   font-family: 'HelveticaNeueCyr';
   font-style: normal;
