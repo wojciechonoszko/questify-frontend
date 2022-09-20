@@ -91,11 +91,11 @@ const Card = ({ data, card, isNewCard }) => {
             level: difficult,
             title: value,
             time: timeDate.data || card.time,
-            category: categoryCart,
+            category: categoryCard,
             type: card.type,
             isActive: true,
         };
-            dispatch(changeTask({ id: card._id, ...newCard }));
+        dispatch(changeTask({ id: card._id, ...newCard }));
     };
 
     const deleteNewCard = () => {
@@ -152,7 +152,7 @@ const Card = ({ data, card, isNewCard }) => {
                         title={card.title}
                         id={card._id}
                     />
-                ) : (
+                ) ): (
                 <li
                     className={`${styles.card} ${card.type === 'CHALLENGE' ? styles.challenge : styles.task}`}
                     onClick={oneEdit}
@@ -163,111 +163,110 @@ const Card = ({ data, card, isNewCard }) => {
                     )}
 
                     <p className={styles.cardCategoryName}>
-                            {edit ? (
-                                <>
-                                    <span
-                                        className={(styles.cardCategoryCircle,
-                                            difficult === 'Normal'
-                                                ? styles.secondOption
-                                                : difficult === 'Hard'
-                                                    ? styles.thirdOption
-                                                    : styles.firstOption)
-                                        }
-                                    > &#9679; </span>
-                    
-                                    <span className={styles.cardCategory} onClick={onClick}>
-                                        {difficult}
-                                    </span>
-                                </>
-                            ) : (
-                        
-                                <span className={card.isActive ? styles.setLevel : styles.inactiveCard} onClick={onClick}>
-                                    <span className={(styles.cardCategoryCircle,
+                        {edit ? (
+                            <>
+                                <span
+                                    className={(styles.cardCategoryCircle,
                                         difficult === 'Normal'
-                                            ? s.secondOption
+                                            ? styles.secondOption
                                             : difficult === 'Hard'
-                                                ? s.thirdOption
-                                                : s.firstOption)
-                                    }>&#9679; </span>
-                                    <span className={styles.cardCategory}>{difficult}</span>
+                                                ? styles.thirdOption
+                                                : styles.firstOption)
+                                    }
+                                > &#9679; </span>
+                    
+                                <span className={styles.cardCategory} onClick={onClick}>
+                                    {difficult}
                                 </span>
-                            )}
-
-                            {card.type === 'CHALLENGE' ? (
-                                <img
-                                    src={trophy}
-                                    alt=""
-                                    className={card.isActive ? styles.cardCategoryStart : styles.cardCategoryStart_inactive}
-                                    onClick={changeCompleted}
-                                />
-                            ) : (
-                                    <span
-                                        className={
-                                            card.isActive
-                                                ? styles.cardCategoryStart
-                                                : styles.cardCategoryStart_inactive
-                                        }
-                                        onClick={changeCompleted}
-                                    >
-                                        {' '}
-                                        &#9733;
-                                    </span>
-                            )}
-                        </p>
-                        {edit && !isNewCard && <p className={styles.editTitle}>edit quest</p>}
-                        {isNewCard && <p className={styles.editTitle}> Creat New Quest</p>}
-
-                        {isNewCard || edit ? (
-                            <form className={styles.form}>
-                                <input
-                                    autoFocus
-                                    className={`${styles.input} ${card.type === 'CHALLENGE' && styles.inputChallenge}`}
-                                    type='text'
-                                value={value}
-                                    onChange={changeValue}
-                                />
-                            </form>
+                            </>
                         ) : (
-                                <>
-                                    {card.type === 'CHALLENGE' ? (
-                                        <h2 className= {styles.challengeHeader}>CHALLENGE</h2>)
-                                ) : (
-                                    <span className = {styles.taskHeader}>TASK</span>
-                                )}
-                                    <h2
-                                        className={`${styles.cardTitle} ${
-                                            card.type === 'CHALLENGE' && styles.cardTitle_challenge
-                                            }`}
-                                    >
-                                        {card.title}
-                                    </h2>
-                                </>
+                        
+                            <span className={card.isActive ? styles.setLevel : styles.inactiveCard} onClick={onClick}>
+                                <span className={(styles.cardCategoryCircle,
+                                    difficult === 'Normal'
+                                        ? styles.secondOption
+                                        : difficult === 'Hard'
+                                            ? styles.thirdOption
+                                            : styles.firstOption)
+                                }>&#9679; </span>
+                                <span className={styles.cardCategory}>{difficult}</span>
+                            </span>
                         )}
 
-                        <div className={styles.cardDate}>
-                            <p className={styles.timeText}>
+                        {card.type === 'CHALLENGE' ? (
+                            <img
+                                src={trophy}
+                                alt=""
+                                className={card.isActive ? styles.cardCategoryStart : styles.cardCategoryStart_inactive}
+                                onClick={changeCompleted}
+                            />
+                        ) : (
+                            <span
+                                className={
+                                    card.isActive
+                                        ? styles.cardCategoryStart
+                                        : styles.cardCategoryStart_inactive
+                                }
+                                onClick={changeCompleted}
+                            >
+                                {' '}
+                                &#9733;
+                            </span>
+                        )}
+                    </p>
+                    {edit && !isNewCard && <p className={styles.editTitle}>edit quest</p>}
+                    {isNewCard && <p className={styles.editTitle}> Creat New Quest</p>}
 
-                                {timeDate.dayName}
-                                {!edit && !isNewCard && <>,&nbsp;{timeDate.time}</>}
-                            </p>
-                            {edit && <TimeDatePicker time={takeTime}/>}
-                            {isNewCard && <TimeDatePicker time={takeTime}/>}
-                        </div>
+                    {isNewCard || edit ? (
+                        <form className={styles.form}>
+                            <input
+                                autoFocus
+                                className={`${styles.input} ${card.type === 'CHALLENGE' && styles.inputChallenge}`}
+                                type='text'
+                                value={value}
+                                onChange={changeValue}
+                            />
+                        </form>
+                    ) : (
+                        <>
+                            {card.type === 'CHALLENGE' ? (
+                                <h2 className={styles.challengeHeader}>CHALLENGE</h2>
+                                ) : (
+                            <span className={styles.taskHeader}>TASK</span>
+                                )}
+                            <h2
+                                className={`${styles.cardTitle} ${card.type === 'CHALLENGE' && styles.cardTitle_challenge
+                                    }`}
+                            >
+                                {card.title}
+                            </h2>
+                        </>
+                    )}
 
-                        <div className={styles.bottomMenu}>
-                            {edit ? (
-                                <>
-                                    <p
-                                        className={`${styles.cardType} ${categoryCard.toLowerCase()}`}
-                                        onClick={categoryModalHandler}
-                                    >
-                                        {categoryCard}
-                                    </p>
-                                </>
-                            ) : (
-                                    <>
-                                        <p
-                                        className = {`${styles.cardType}
+                    <div className={styles.cardDate}>
+                        <p className={styles.timeText}>
+
+                            {timeDate.dayName}
+                            {!edit && !isNewCard && <>,&nbsp;{timeDate.time}</>}
+                        </p>
+                        {edit && <TimeDatePicker time={takeTime} />}
+                        {isNewCard && <TimeDatePicker time={takeTime} />}
+                    </div>
+
+                    <div className={styles.bottomMenu}>
+                        {edit ? (
+                            <>
+                                <p
+                                    className={`${styles.cardType} ${categoryCard.toLowerCase()}`}
+                                    onClick={categoryModalHandler}
+                                >
+                                    {categoryCard}
+                                </p>
+                            </>
+                        ) : (
+                            <>
+                                <p
+                                    className={`${styles.cardType}
                                             ${card.category === 'LEARNING' && styles.learning}
                                             ${card.category === 'LEISURE' && styles.leisure}
                                             ${card.category === 'FAMILY' && styles.family}
@@ -276,22 +275,50 @@ const Card = ({ data, card, isNewCard }) => {
                                             ${card.category === 'WORK' && styles.work}
                                             ${!card.isActive && styles.inactiveCard}
                                         `}
-                                    </>
-                            )}
-                        </div>
+                                    onClick={categoryModalHandler}
+                                >
+                                    {card.category}{' '}
+                                    {card.isActive && <i className={styles.arrowDown}>&#9207;</i>}
 
+                                </p>
+                            </>
+                        )}
 
+                        {isNewCard && (
+                            <>
+                                <div className={styles.buttons}>
+                                    <span className={styles.cross} onClick={deleteNewCard}>
+                                        &#10006;
+                                        </span>
+                                        <span onClick={addNewTask} className={styles.start}>
+                                            START
+                                        </span>
 
+                                </div>
+                            </>
+                        )}
+                        {edit && !isNewCard && (
+                            <>
+                                <div className={styles.buttons}>
+                                    <div className={styles.saveIcon} onClick={closeAndSave}>
+                                        <img src={saveIcon} alt="save card" />
+                                    </div>
 
-
-
-
-                            
-
-                
-                        
-                        
+                                    <span className={styles.cross} onClick={onDelete}>
+                                        &#10006;
+                                    </span>
+                                    <span onClick={changeCompleted} className={styles.checked}>
+                                        &#10004;
+                                    </span>
+                                </div>
+                            </>
+                        )}
+                    </div>
+                </li>
+            )}
+        </>
      
+<<<<<<< HEAD
     )
 }
 
@@ -398,3 +425,9 @@ const Card = ({ data, card, isNewCard }) => {
 
 }
 >>>>>>> 46be25a (card)
+=======
+    );
+};
+
+export default Card;
+>>>>>>> 9687e11 (Update Card.js)
