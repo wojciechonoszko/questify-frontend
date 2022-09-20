@@ -1,5 +1,6 @@
 import TextField from '@mui/material/TextField';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {AdapterDateFns} from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 // import { LocalizationProvider } from '@mui/lab';
@@ -14,6 +15,12 @@ import { LocalizationProvider } from '@mui/x-date-pickers';
 >>>>>>> 778541e (time picker)
 import { DateTimePicker } from '@mui/lab';
 >>>>>>> 4c573ad (add mui bundles)
+=======
+import {AdapterDateFns} from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+// import { LocalizationProvider } from '@mui/lab';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+>>>>>>> 46be25a (card)
 import { useState } from 'react';
 
 import styles from './TimePickers.module.css';
