@@ -1,5 +1,9 @@
+import React from "react";
+import LandingPage from '../pages/LandingPage/LandingPage';
+
 export const App = () => {
   return (
+    <>
     <div
       style={{
         height: '100vh',
@@ -10,7 +14,8 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
-    </div>
+      <LandingPage/>
+      </div>
+      </>
   );
 };
