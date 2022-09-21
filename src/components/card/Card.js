@@ -47,7 +47,9 @@ const Card = ({ data, card, isNewCard }) => {
         let coverCard = new Date(card.time);
         coverCard = dateAdapted(coverCard);
         setTimeDate(coverCard);
-    }, []);
+    }
+        , [card.category, card.level, card.time, card.title]
+    );
 
     function onClick() {
         setModal(!modal);
@@ -156,12 +158,12 @@ const Card = ({ data, card, isNewCard }) => {
                 ) ): (
                 <li
                     className={`${styles.card} ${card.type === 'CHALLENGE' ? styles.challenge : styles.task}`}
-                    onClick={oneEdit}
+                    onClick={onEdit}
                 >
-                    {card.isActive && modal && <DifficultModal change={change} />}
+                    {/* {card.isActive && modal && <DifficultModal change={change} />}
                     {deleteModal && <DeleteModule change={deleteHandler} />}
                     {card.isActive && categoryModal && (<CategoryModal change={changeType} />
-                    )}
+                    )} */}
 
                     <p className={styles.cardCategoryName}>
                         {edit ? (
