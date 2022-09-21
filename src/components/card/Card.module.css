@@ -60,21 +60,224 @@
 }
 
 .cardTitle_challenge {
-    color: pink;
+  color: pink;
 }
 
 .cardDate {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'HelveticaNeueCyr-Medium';
-    font-size: 14px;
-    color: black;
-    margin: 0 auto;
-    margin-bottom: 40px;
-    margin-top: 10px;
-    white-space: nowrap;
-    overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'HelveticaNeueCyr-Medium';
+  font-size: 14px;
+  color: black;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  margin-top: 10px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
+.cardType {
+  font-family: 'HelveticaNeueCyr-Medium';
+  font-size: 11px;
+  line-height: 11px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border-radius: 0px 25px 25px 0px;
 
+  width: 120px;
+  height: 35px;
+  padding: 5px;
+  padding-left: 20px;
+  margin-left: -20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.inactiveCard {
+  cursor: default;
+}
+
+.arrowDown {
+  color: black;
+  margin-left: 7px;
+  visibility: hidden;
+}
+
+.cardType:hover .arrowDown,
+.cardType:focus .arrowDown {
+  visibility: visible;
+}
+
+.editTitle {
+  font-family: 'HelveticaNeueCyr-Medium';
+  font-size: 12px;
+  line-height: 12px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: black;
+}
+
+.bottomMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardCategory {
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  align-items: baseline;
+  margin-left: auto;
+}
+
+.saveIcon {
+  position: relative;
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  margin-right: 17px;
+}
+
+.saveIcon::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 16px;
+  background-color: pink;
+  top: -40%;
+  right: -7px;
+}
+
+.timeText {
+  font-family: 'HelveticaNeueCyr-Medium';
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+}
+
+.cross {
+  color: black;
+  margin-left: auto;
+  margin-right: 14px;
+  position: relative;
+  cursor: pointer;
+}
+
+.cross::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 16px;
+  background-color: pink;
+  top: 10%;
+  right: -8px;
+}
+
+.checked {
+  color: black;
+  font-family: 'HelveticaNeueCyr-Medium';
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.start {
+  color: red;
+  font-family: 'HelveticaNeueCyr-Medium';
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.card {
+  justify-content: space-around;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 205px;
+  margin-top: 20px;
+  padding: 20px;
+  box-shadow: -3px -4px 4px rgba(21, 57, 90, 0.03),
+    3px 4px 4px rgba(21, 57, 90, 0.03);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.task {
+  background: white;
+}
+
+.challenge {
+  background: pink;
+}
+
+.form {
+  margin: 0 auto;
+}
+
+.input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: inherit;
+  border-bottom: 1px solid black;
+  color: pink;
+  margin-top: 4px;
+  caret-color: yellow;
+  text-align: center;
+  font-family: 'HelveticaNeueCyr-Medium';
+  font-size: 16px;
+  line-height: 1.37;
+}
+
+.inputChallenge {
+  color: white;
+}
+
+.firstOption {
+  color: red;
+  margin-right: 10px;
+}
+
+.secondOption {
+  color: green;
+  margin-right: 10px;
+}
+
+.thirdOption {
+  color: purple;
+  margin-right: 10px;
+}
+
+.learning {
+  background-color: #fff6c0;
+}
+
+.leisure {
+  background-color: #f8d2ff;
+}
+
+.family {
+  background-color: #FFE6D3;
+}
+
+.health {
+  background-color: #CDF7FF;
+}
+
+.stuff {
+  background-color: #B9C3C8;
+}
+
+.work {
+  background-color: #D3F6CE;
+}
