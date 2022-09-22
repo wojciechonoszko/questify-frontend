@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { store, persistor } from './redux/configureStore';
+import { PersistGate } from 'redux-persist/integration/react';
+
 import { App } from 'components/App';
 import AddCard from 'components/modal/modal';
 <<<<<<< HEAD
@@ -23,6 +27,7 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+<<<<<<< HEAD
     <App>
       <PageHeader />
       <PageMain />
@@ -41,5 +46,19 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Card></Card>
 >>>>>>> fce165d (card card)
     </App>
+=======
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <App>
+          <PageHeader />
+          <PageMain />
+          <AddCard></AddCard>
+          <MediaCard></MediaCard>
+          <DateAndTimePicker></DateAndTimePicker>
+          <Card></Card>
+        </App>
+      </PersistGate>
+    </Provider>
+>>>>>>> e488aab (update card)
   </React.StrictMode>
 );
