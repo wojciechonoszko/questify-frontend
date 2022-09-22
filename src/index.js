@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { store, persistor } from './redux/configureStore';
+import { PersistGate } from 'redux-persist/integration/react';
+
 import { App } from 'components/App';
 import AddCard from 'components/modal/modal';
 import PageHeader from 'components/header/header';
@@ -11,13 +15,17 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App>
-      <PageHeader />
-      <PageMain />
-      <AddCard></AddCard>
-      <MediaCard></MediaCard>
-      <DateAndTimePicker></DateAndTimePicker>
-      <Card></Card>
-    </App>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <App>
+          <PageHeader />
+          <PageMain />
+          <AddCard></AddCard>
+          <MediaCard></MediaCard>
+          <DateAndTimePicker></DateAndTimePicker>
+          <Card></Card>
+        </App>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );

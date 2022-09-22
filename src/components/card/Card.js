@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
-    deleteTask,
+    // deleteTask,
     changeTask,
     deleteNewTask,
     addNewCard,
@@ -16,10 +16,10 @@ import { newTaskCard } from '../../redux/task/taskSelector';
 // deletemodal
 // categoryModal
 
-import TimeDatePicker from '../timePickers/';
-import dateAdapted from '../TimePickers/dateAdapted';
-import CompletedChallenge from '../CompletedChallenge';
-import CompletedCard from '../CompletedCard/CompletedCard';
+import TimeDatePicker from '../timePickers/TimePickers';
+import dateDisplay from '../timePickers/dateDisplay';
+import CompletedChallenge from '../completedChallenge/CompletedChallenge';
+import CompletedCard from '../completedCard/CompletedCard';
 
 import saveIcon from '../../images/save_icon.svg';
 import trophy from '../../images/trophy.svg';
@@ -37,15 +37,15 @@ const Card = ({ data, card, isNewCard }) => {
     const [categoryCard, setCategoryCard] = useState('family');
     const [timeDate, setTimeDate] = useState(new Date());
 
-    const dispatch = useDispatch();
-    const cardFromState = useSelector(newTaskCard);
+     const dispatch = useDispatch();
+     const cardFromState = useSelector(newTaskCard);
 
     useEffect(() => {
         setDifficult(card.level);
         setValue(card.title);
         setCategoryCard(card.category);
         let coverCard = new Date(card.time);
-        coverCard = dateAdapted(coverCard);
+        coverCard = dateDisplay(coverCard);
         setTimeDate(coverCard);
     }
         , [card.category, card.level, card.time, card.title]
@@ -59,18 +59,18 @@ const Card = ({ data, card, isNewCard }) => {
         setCategoryModal(!categoryModal);
     }
 
-    function change(data) {
-        setDifficult(data);
-        onClick();
-    }
+    // function change(data) {
+    //     setDifficult(data);
+    //     onClick();
+    // }
 
-    function deleteHandler(bool) {
-        if (bool) {
-            dispatch(deleteTask(card._id));
-            onDelete();
-        }
-        onDelete();
-    }
+    // function deleteHandler(bool) {
+    //     if (bool) {
+    //         dispatch(deleteTask(card._id));
+    //         onDelete();
+    //     }
+    //     onDelete();
+    // }
 
     function onDelete() {
         setDeleteModal(!deleteModal);
@@ -115,8 +115,8 @@ const Card = ({ data, card, isNewCard }) => {
                 level: difficult,
             }),
         );
-        const adapted = dateAdapted(timeDate.data);
-        setTimeDate(adapted);
+        const display = dateDisplay(timeDate.data);
+        setTimeDate(display);
     };
 
 
@@ -124,10 +124,10 @@ const Card = ({ data, card, isNewCard }) => {
         dispatch(changeTaskStatus({ id: card._id, isActive: false }));
     };
 
-    function changeType(data) {
-        setCategoryCard(data);
-        categoryModalHandler();
-    }
+    // function changeType(data) {
+    //     setCategoryCard(data);
+    //     categoryModalHandler();
+    // }
 
     function takeTime(date) {
         setTimeDate(date);
@@ -176,7 +176,7 @@ const Card = ({ data, card, isNewCard }) => {
                                                 ? styles.thirdOption
                                                 : styles.firstOption)
                                     }
-                                > &#9679; </span>
+                                > &#9679; fread </span>
                     
                                 <span className={styles.cardCategory} onClick={onClick}>
                                     {difficult}
@@ -218,7 +218,7 @@ const Card = ({ data, card, isNewCard }) => {
                         )}
                     </p>
                     {edit && !isNewCard && <p className={styles.editTitle}>edit quest</p>}
-                    {isNewCard && <p className={styles.editTitle}> Creat New Quest</p>}
+                    {isNewCard && <p className={styles.editTitle}> Create New Quest</p>}
 
                     {isNewCard || edit ? (
                         <form className={styles.form}>

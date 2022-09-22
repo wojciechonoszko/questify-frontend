@@ -1,6 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import api from '../user/interceptor';
+// const baseUrl = process.env.reactAppBaseUrl;
 const baseUrl = process.env.reactAppBaseUrl;
+// const baseUrl = 'https://connections-api.herokuapp.com/';
 
 export const addCardToState = createAsyncThunk(
     'task/addCard',
