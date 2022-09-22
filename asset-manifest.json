@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/questify-frontend/static/css/main.4e724118.css",
+    "main.js": "/questify-frontend/static/js/main.e7f63414.js",
+    "static/media/landing_page_bg.png": "/questify-frontend/static/media/landing_page_bg.dcf49853f50348158dd2.png",
+    "static/media/landing_page_bg_tablet.png": "/questify-frontend/static/media/landing_page_bg_tablet.2584821fee70f9fa3388.png",
+    "static/media/landing_page_bg_mobile.png": "/questify-frontend/static/media/landing_page_bg_mobile.1bcb7433e698a1a39c18.png",
+    "index.html": "/questify-frontend/index.html",
+    "main.4e724118.css.map": "/questify-frontend/static/css/main.4e724118.css.map",
+    "main.e7f63414.js.map": "/questify-frontend/static/js/main.e7f63414.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e724118.css",
+    "static/js/main.e7f63414.js"
+  ]
+}
