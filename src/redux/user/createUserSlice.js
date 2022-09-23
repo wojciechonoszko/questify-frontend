@@ -7,7 +7,7 @@ import {
   userRefresh,
   userResetPassword,
   userChangePassword,
-} from './operation';
+} from './userOperation';
 
 const initialState = {
   userInfo: {
