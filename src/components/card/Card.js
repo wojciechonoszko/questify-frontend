@@ -13,7 +13,7 @@ import {
     deleteNewTask,
     addNewCard,
     changeTaskStatus,
-} from '../../redux/task/operation';
+} from '../../redux/task/taskOperation';
 
 import { newTaskCard } from '../../redux/task/taskSelector';
 
