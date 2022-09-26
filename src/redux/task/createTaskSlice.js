@@ -18,7 +18,7 @@ const initialState = {
     error: null,
 }
 
-const taskSliceAll = createSlice({
+const taskSlice = createSlice({
     name: 'task',
     initialState,
     extraReducers: {
@@ -136,4 +136,4 @@ const taskSliceAll = createSlice({
     },
 });
 
-export default taskSliceAll.reducer;
+export default taskSlice.reducer;
