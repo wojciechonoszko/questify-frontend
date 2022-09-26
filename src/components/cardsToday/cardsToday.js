@@ -32,12 +32,14 @@
 //   );
 // }
 
-import Card from "../Card";
+import Card from "../card/Card";
 
 import styles from "./CardsToday.module.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { newTaskCard, taskActive } from '../../redux/task/taskSelector';
 import { useEffect, useState } from 'react';
+
+import data from './tempData.json'
 
 import {
   showTaskActive,
@@ -49,7 +51,7 @@ const CardsToday = () => {
   useEffect(() => {
     dispatch(showTaskActive());
     dispatch(showTaskDone());
-  }, []);
+  }, [dispatch]);
 
   const task = useSelector(taskActive);
   const newTask = useSelector(newTaskCard);
@@ -72,14 +74,14 @@ const CardsToday = () => {
     const month = new Date(date).getMonth();
     const day = new Date(date).getDate();
 
-    return (year === yearNow ) && (month === monthNow) && ((day === dayNow) && true)
+    return (year === yearNow) && (month === monthNow) && ((day === dayNow) && true)
   }
 
 
   return (
     <>
       <section className={styles.section}>
-      <h2 className={styles.title}>Today</h2>
+        <h2 className={styles.title}>Today</h2>
         <ul className={styles.cardSet}>
           {isNewCard && (
             <Card
@@ -88,9 +90,39 @@ const CardsToday = () => {
               isNewCard={isNewCard}
             />
           )}
+          {task?.forEach(card => {
+            if (checkIfToday(card.time)) {
+              return (
+                <Card
+                  key={card._id}
+                  card={card}
+                  data={takeData}
+                />
+              )
+            }
+          })}
         </ul>
+      </section>
+      <section className={styles.section}>
+        <h2 className={styles.title}>Tomorrow</h2>
+        <ul className={styles.cardSet}>
+          {task?.forEach(card => {
+            if (!checkIfToday(card.time)) {
+              return (
+                <Card
+                  key={card._id}
+                  card={card}
+                  data={takeData}
+                />
+              )
+            }
+          })}
+        </ul>
+
       </section>
     
     </>
-  )
-}
+  );
+};
+
+export default CardsToday;
