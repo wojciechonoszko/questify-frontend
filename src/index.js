@@ -9,6 +9,7 @@ import AddCard from 'components/modal/modal';
 <<<<<<< HEAD
 import PageHeader from 'components/header/header';
 import PageMain from 'components/main/main';
+<<<<<<< HEAD
 import MediaCard from 'components/cardsToday/cardsToday';
 import DateAndTimePicker from 'components/timePickers/TimePickers';
 
@@ -29,10 +30,18 @@ import CardsToday from 'components/cardsToday/cardsToday'
 // import CardsTomorrow from 'components/cardsTomorrow/CardsTomorrow'
 //import Card from 'components/card/Card'
 >>>>>>> 3692e1d (card)
+=======
+import MediaCard from 'components/cardsToday/cardsToday'
+import DateAndTimePicker from 'components/timePickers/TimePickers'
+import CardsToday from 'components/cardsToday/cardsToday'
+// import CardsTomorrow from 'components/cardsTomorrow/CardsTomorrow'
+//import Card from 'components/card/Card'
+>>>>>>> 8c445c0b987ad83ca581464999d39cdc33031240
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <App>
       <PageHeader />
@@ -53,6 +62,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 >>>>>>> fce165d (card card)
     </App>
 =======
+=======
+>>>>>>> 8c445c0b987ad83ca581464999d39cdc33031240
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <App>
@@ -67,6 +78,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </App>
       </PersistGate>
     </Provider>
+<<<<<<< HEAD
 >>>>>>> e488aab (update card)
+=======
+>>>>>>> 8c445c0b987ad83ca581464999d39cdc33031240
   </React.StrictMode>
 );

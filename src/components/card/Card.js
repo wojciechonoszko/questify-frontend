@@ -2,13 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     deleteTask,
-=======
-    // deleteTask,
->>>>>>> e488aab (update card)
     changeTask,
     deleteNewTask,
     addNewCard,
@@ -43,8 +37,8 @@ const Card = ({ data, card, isNewCard }) => {
     const [categoryCard, setCategoryCard] = useState('family');
     const [timeDate, setTimeDate] = useState(new Date());
 
-     const dispatch = useDispatch();
-     const cardFromState = useSelector(newTaskCard);
+    const dispatch = useDispatch();
+    const cardFromState = useSelector(newTaskCard);
 
     useEffect(() => {
         setDifficult(card.level);
@@ -161,7 +155,7 @@ const Card = ({ data, card, isNewCard }) => {
                         title={card.title}
                         id={card._id}
                     />
-                ) ): (
+                )) : (
                 <li
                     className={`${styles.card} ${card.type === 'CHALLENGE' ? styles.challenge : styles.task}`}
                     onClick={onEdit}
@@ -240,9 +234,9 @@ const Card = ({ data, card, isNewCard }) => {
                         <>
                             {card.type === 'CHALLENGE' ? (
                                 <h2 className={styles.challengeHeader}>CHALLENGE</h2>
-                                ) : (
-                            <span className={styles.taskHeader}>TASK</span>
-                                )}
+                            ) : (
+                                <span className={styles.taskHeader}>TASK</span>
+                            )}
                             <h2
                                 className={`${styles.cardTitle} ${card.type === 'CHALLENGE' && styles.cardTitle_challenge
                                     }`}
@@ -298,10 +292,10 @@ const Card = ({ data, card, isNewCard }) => {
                                 <div className={styles.buttons}>
                                     <span className={styles.cross} onClick={deleteNewCard}>
                                         &#10006;
-                                        </span>
-                                        <span onClick={addNewTask} className={styles.start}>
-                                            START
-                                        </span>
+                                    </span>
+                                    <span onClick={addNewTask} className={styles.start}>
+                                        START
+                                    </span>
 
                                 </div>
                             </>
@@ -326,117 +320,8 @@ const Card = ({ data, card, isNewCard }) => {
                 </li>
             )}
         </>
-     
-<<<<<<< HEAD
     )
-}
-
-=======
-    deleteTodo,
-    changeTodo,
-    deleteNewTodo,
-    addNewCard,
-    changeTodoStatus,
-} from '../../redux/todos/operation';
-<<<<<<< HEAD
->>>>>>> 56f3fee (card)
-=======
-=======
-    deleteTask,
-    changeTask,
-    deleteNewTask,
-    addNewCard,
-    changeTaskStatus,
-} from '../../redux/task/operation';
->>>>>>> 46be25a (card)
-
-import { newTaskCard } from '../../redux/task/taskSelector';
-
-// import Modals from '../modals'
-
-import TimeDatePicker from '../timePickers/';
-import dateAdapted from '../TimePickers/dateAdapted';
-import CompletedChallenge from '../CompletedChallenge';
-import CompletedCard from '../CompletedCard/CompletedCard';
-<<<<<<< HEAD
->>>>>>> 062dc66 (update card and add time picker)
-=======
-
-import saveIcon from '../../images/save_icon.svg';
-import trophy from '../../images/trophy.svg';
-import styles from './Card.module.css';
-
-const Card = ({ data, card, isNewCard }) => {
-
-    const [completed, setCompleted] = useState(false);
-    const [categoryModal, setCategoryModal] = useState(false);
-    const [modal, setModal] = useState(false);
-    const [edit, setEdit] = useState(false);
-    const [deleteModal, setDeleteModal] = useState(false);
-    const [difficult, setDifficult] = useState('');
-    const [value, setValue] = useState('');
-    const [categoryCard, setCategoryCard] = useState('family');
-    const [timeDate, setTimeDate] = useState(new Date());
-
-    const dispatch = useDispatch();
-    const cardFromState = useSelector(newTaskCard);
-
-    useEffect(() => {
-        setDifficult(card.level);
-        setValue(card.title);
-        setCategoryCard(card.category);
-        let coverCard = new Date(card.time);
-        coverCard = dateAdapted(coverCard);
-        setTimeDate(coverCard);
-    }, []);
-
-    function onClick() {
-        setModal(!modal);
-    }
-
-    function categoryModalHandler() {
-        setCategoryModal(!categoryModal);
-    }
-
-    function change(data) {
-        setDifficult(data);
-        onClick();
-    }
-
-    function deleteHandler(bool) {
-        if (bool) {
-            dispatch(deleteTask(card._id));
-            onDelete();
-        }
-        onDelete();
-    }
-
-    function onDelete() {
-        setDeleteModal(!deleteModal);
-    }
-
-    function onEdit(error) {
-        if (!card.isActive) {
-            return;
-        }
-        if (!edit) setEdit(true);
-    }
-
-    function changeValue(event) {
-        setValue(event.target.value);
-    }
-
-    const closeAndSave = () => {
-        setEdit(false);
-
-        
-    }
 
 }
->>>>>>> 46be25a (card)
-=======
-    );
-};
-
 export default Card;
->>>>>>> 9687e11 (Update Card.js)
+

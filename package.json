@@ -6,54 +6,20 @@
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4c573ad (add mui bundles)
     "@material/textfield": "^14.0.0",
     "@mui/base": "^5.0.0-alpha.91",
     "@mui/icons-material": "^5.10.3",
     "@mui/lab": "^5.0.0-alpha.99",
     "@mui/material": "^5.9.2",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     "@mui/x-date-pickers": "^5.0.2",
-<<<<<<< HEAD
-
-=======
->>>>>>> 1dbc355 (changes)
-=======
-    "@mui/base": "^5.0.0-alpha.91",
-    "@mui/material": "^5.9.2",
->>>>>>> 56f3fee (card)
     "@reduxjs/toolkit": "^1.8.5",
-=======
-=======
-    "@mui/x-date-pickers": "^5.0.2",
->>>>>>> 778541e (time picker)
-    "@reduxjs/toolkit": "^1.8.3",
->>>>>>> 42fc6e1 (better)
-=======
-    "@reduxjs/toolkit": "^1.8.5",
->>>>>>> e488aab (update card)
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     "date-fns": "^2.29.3",
-=======
     "material-ui-modal": "^1.0.0",
     "modal": "^1.2.0",
->>>>>>> 1dbc355 (changes)
-=======
->>>>>>> 42fc6e1 (better)
-=======
-    "date-fns": "^2.29.3",
->>>>>>> 778541e (time picker)
     "notiflix": "^3.2.5",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
