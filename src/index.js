@@ -26,6 +26,7 @@ import Card from 'components/card/Card'
 >>>>>>> fce165d (card card)
 =======
 import CardsToday from 'components/cardsToday/cardsToday'
+// import CardsTomorrow from 'components/cardsTomorrow/CardsTomorrow'
 //import Card from 'components/card/Card'
 >>>>>>> 3692e1d (card)
 import './index.css';
@@ -60,7 +61,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <AddCard></AddCard>
           <MediaCard></MediaCard>
           <DateAndTimePicker></DateAndTimePicker>
-          <CardsToday/>
+          <CardsToday />
+          {/* <CardsTomorrow /> */}
           {/* <Card></Card> */}
         </App>
       </PersistGate>
