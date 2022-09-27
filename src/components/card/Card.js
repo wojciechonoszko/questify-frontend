@@ -48,7 +48,8 @@ const Card = ({ data, card, isNewCard }) => {
         coverCard = dateDisplay(coverCard);
         setTimeDate(coverCard);
     }
-        , [card.category, card.level, card.time, card.title]
+       // , [card.category, card.level, card.time, card.title]
+        , []
     );
 
     function onClick() {
