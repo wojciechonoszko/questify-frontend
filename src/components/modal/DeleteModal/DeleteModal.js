@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition } from 'react-transition-group';
-import s from './DeleteModal.module.css';
+import styles from './DeleteModal.module.css';
 import './DeleteModalAnimation.css';
 
 export default function DeleteModal({ isChallenge, onClose, onDelete }) {
@@ -36,7 +36,7 @@ export default function DeleteModal({ isChallenge, onClose, onDelete }) {
   };
 
   return (
-    <div className={s.backdrop} onClick={handleBackdropClick}>
+    <div className={styles.backdrop} onClick={handleBackdropClick}>
       <CSSTransition
         in={true}
         appear={true}
@@ -44,18 +44,18 @@ export default function DeleteModal({ isChallenge, onClose, onDelete }) {
         classNames="content"
         unmountOnExit
       >
-        <div className={s.content}>
-          <p className={s.confirm}>Delete this {cardType}?</p>
-          <div className={s.buttonWrapper}>
+        <div className={styles.content}>
+          <p className={styles.confirm}>Delete this {cardType}?</p>
+          <div className={styles.buttonWrapper}>
             <button
-              className={s.button}
+              className={styles.button}
               onClick={handleCancelBtnClick}
               type="button"
             >
               cancel
             </button>
             <button
-              className={s.button}
+              className={styles.button}
               onClick={handleDeleteBtnClick}
               type="button"
             >

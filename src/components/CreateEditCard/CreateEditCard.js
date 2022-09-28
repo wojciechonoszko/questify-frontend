@@ -48,8 +48,8 @@ const CreateEditCard = ({
 
   const handleDeleteCard = () => dispatch(cardsOperations.deleteCard(cardId));
 
-  const onInputChange = e => {
-    setText(e.target.value);
+  const onInputChange = event => {
+    setText(event.target.value);
   };
 
   const handleCardTypeToggle = () => {

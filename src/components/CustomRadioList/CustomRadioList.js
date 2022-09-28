@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import s from './CustomRadioList.module.css';
+import styles from './CustomRadioList.module.css';
 
 export default function CustomRadioList({
   isChallenge,
@@ -11,18 +11,18 @@ export default function CustomRadioList({
   const isDifficultyType = type === 'difficulty';
   const containerStyle =
     isChallenge && isDifficultyType
-      ? [s[type + '_container'], s.dark_container].join(' ')
-      : s[type + '_container'];
+      ? [styles[type + '_container'], styles.dark_container].join(' ')
+      : styles[type + '_container'];
   const radioStyle =
     isChallenge && isDifficultyType
-      ? s[type + '_dark_radio']
-      : s[type + '_radio'];
+      ? styles[type + '_dark_radio']
+      : styles[type + '_radio'];
 
   return (
     <ul className={containerStyle}>
       {options.map(option => (
         <li key={option}>
-          <label className={s[type + '_label']}>
+          <label className={styles[type + '_label']}>
             <input
               type="radio"
               checked={value === option}
@@ -33,13 +33,13 @@ export default function CustomRadioList({
             />
             {isDifficultyType ? (
               <>
-                <span className={s.radio_outline}></span>
-                <span className={[s[type + '_text'], s[option]].join(' ')}>
+                <span className={styles.radio_outline}></span>
+                <span className={[styles[type + '_text'], styles[option]].join(' ')}>
                   {option}
                 </span>
               </>
             ) : (
-              <span className={s[type + '_text']}>{option}</span>
+              <span className={styles[type + '_text']}>{option}</span>
             )}
           </label>
         </li>

@@ -3,14 +3,14 @@ import { CSSTransition } from 'react-transition-group';
 import Icons from '../../images/icons.svg';
 import Icon from '../Icon';
 
-import s from './CompletedCard.module.css';
+import styles from './CompletedCard.module.css';
 import './CompletedAnimation.css';
 
 const CompletedCard = ({ text, isChallenge, onCompleted, onClose }) => {
-  const classList = isChallenge ? s.challengeBox : s.questBox;
+  const classList = isChallenge ? styles.challengeBox : styles.questBox;
 
-  const classHiddenTrophy = isChallenge ? '' : s.hidden;
-  const classHiddenTarget = isChallenge ? s.hidden : '';
+  const classHiddenTrophy = isChallenge ? '' : styles.hidden;
+  const classHiddenTarget = isChallenge ? styles.hidden : '';
 
   const handleClick = () => {
     onClose();
@@ -19,13 +19,13 @@ const CompletedCard = ({ text, isChallenge, onCompleted, onClose }) => {
 
   return (
     <div className={classList}>
-      <div className={s.contentBox}>
-        <p className={s.content}>COMPLETED:</p>
-        <p onClick={onClose} className={s.link}>
-          <span className={s.linkText}>{text}</span>
+      <div className={styles.contentBox}>
+        <p className={styles.content}>COMPLETED:</p>
+        <p onClick={onClose} className={styles.link}>
+          <span className={styles.linkText}>{text}</span>
         </p>
       </div>
-      <div className={s.awardBox}>
+      <div className={styles.awardBox}>
         <CSSTransition
           in={true}
           appear={true}
@@ -33,7 +33,7 @@ const CompletedCard = ({ text, isChallenge, onCompleted, onClose }) => {
           classNames="leftClouds"
           unmountOnExit
         >
-          <svg className={s.leftClouds}>
+          <svg className={styles.leftClouds}>
             <use xlinkHref={`${Icons}#icon-left-clouds`} />
           </svg>
         </CSSTransition>
@@ -44,11 +44,11 @@ const CompletedCard = ({ text, isChallenge, onCompleted, onClose }) => {
           classNames="rightClouds"
           unmountOnExit
         >
-          <svg className={s.rightClouds}>
+          <svg className={styles.rightClouds}>
             <use xlinkHref={`${Icons}#icon-right-clouds`} />
           </svg>
         </CSSTransition>
-        <svg className={s.iconBase}>
+        <svg className={styles.iconBase}>
           <use xlinkHref={`${Icons}#icon-base`} />
         </svg>
 
@@ -60,7 +60,7 @@ const CompletedCard = ({ text, isChallenge, onCompleted, onClose }) => {
             classNames="trophy"
             unmountOnExit
           >
-            <svg className={s.iconTrophy}>
+            <svg className={styles.iconTrophy}>
               <use xlinkHref={`${Icons}#icon-trophy-cup`} />
             </svg>
           </CSSTransition>
@@ -71,7 +71,7 @@ const CompletedCard = ({ text, isChallenge, onCompleted, onClose }) => {
             classNames="first"
             unmountOnExit
           >
-            <svg className={s.iconFirst}>
+            <svg className={styles.iconFirst}>
               <use xlinkHref={`${Icons}#icon-first`} />
             </svg>
           </CSSTransition>
@@ -84,7 +84,7 @@ const CompletedCard = ({ text, isChallenge, onCompleted, onClose }) => {
             classNames="target"
             unmountOnExit
           >
-            <svg className={s.iconTarget}>
+            <svg className={styles.iconTarget}>
               <use xlinkHref={`${Icons}#icon-target`} />
             </svg>
           </CSSTransition>
@@ -95,16 +95,16 @@ const CompletedCard = ({ text, isChallenge, onCompleted, onClose }) => {
             classNames="arrow"
             unmountOnExit
           >
-            <svg className={s.iconArrow}>
+            <svg className={styles.iconArrow}>
               <use xlinkHref={`${Icons}#icon-arrow`} />
             </svg>
           </CSSTransition>
         </div>
       </div>
 
-      <button onClick={handleClick} className={s.button}>
+      <button onClick={handleClick} className={styles.button}>
         <span>Continue</span>
-        <Icon className={s.arrow} name={'arrow-right'} size={7} />
+        <Icon className={styles.arrow} name={'arrow-right'} size={7} />
       </button>
     </div>
   );

@@ -5,7 +5,7 @@ import Card from '../Card/Card';
 import InfoCard from '../InfoCard/InfoCard';
 import CreateEditCard from '../CreateEditCard/CreateEditCard';
 
-import s from './CardList.module.css';
+import styles from './CardList.module.css';
 import './Pagination.css';
 
 function CardList({
@@ -51,9 +51,9 @@ function CardList({
 
   return (
     <>
-      <ul className={s.cardList}>
+      <ul className={styles.cardList}>
         {isCreateFormShown && (
-          <li className={s.cardListItem}>
+          <li className={styles.cardListItem}>
             <CreateEditCard handleHideCard={onCloseForm} />
           </li>
         )}
@@ -72,7 +72,7 @@ function CardList({
             text,
             isCompleted,
           }) => (
-            <li className={s.cardListItem} key={id}>
+            <li className={styles.cardListItem} key={id}>
               <Card
                 id={id}
                 isChallenge={isChallenge}
