@@ -1,4 +1,4 @@
-const dateDisplay = data => {
+const DateDisplay = data => {
   const days = [
     'Sunday',
     'Monday',
@@ -48,4 +48,4 @@ const dateDisplay = data => {
   return { time: times, dayName };
 };
 
-export default dateDisplay;
+export default DateDisplay;

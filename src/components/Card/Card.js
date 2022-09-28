@@ -13,20 +13,20 @@ import '../../utils/variables.css';
 
 import { newTodoCard } from '../../redux/todos/todosSelector';
 
-import DifficultModal from '../modal/DifficultModal';
-import DeleteModule from '../modal/modalDelete';
-import CategoryModal from '../modal/CategoryModal';
-import TimeDatePicker from '../TimePickers';
-import dateAdapted from '../TimePickers/dateAdapted';
+import DifficultModal from '../modal/DifficultModal/DifficultModal';
+import DeleteModule from '../modal/ModalDelete/ModalDelete';
+import CategoryModal from '../modal/CategoryModal/CategoryModal';
+import TimeDatePicker from '../TimePickers/TimePickers';
+import DateDisplay from '../TimePickers/DateDisplay';
 import CompletedCard from '../CompletedCard/CompletedCard';
-import CompletedChallenge from '../CompletedChallenge';
-import CardHeader from './Card/CardHeader';
-import CardIcon from './Card/CardHeader/CardIcon';
-import CardHeading from './Card/CardHeading';
-import CardTitle from './Card/CardTitle';
+import CompletedChallenge from '../CompletedChallenge/CompletedChallenge';
+import CardHeader from './Card/CardHeader/CardHeader';
+import CardIcon from './Card/CardHeader/CardIcon/CardIcon';
+import CardHeading from './Card/CardHeading/CardHeading';
+import CardTitle from './Card/CardTitle/CardTitle';
 import CardInput from './Card/CardInput/CardInput';
-import CardSelectCategory from './Card/CardSelectCategory';
-import CardBottomMenu from './Card/CardBottomMenu';
+import CardSelectCategory from './Card/CardSelectCategory/CardSelectCategory';
+import CardBottomMenu from './Card/CardBottomMenu/CardBottomMenu';
 
 const Card = ({ data, card, isNewCard, isChallengeWindow }) => {
   const [completed, setCompleted] = useState(false);
@@ -47,7 +47,7 @@ const Card = ({ data, card, isNewCard, isChallengeWindow }) => {
     setvalue(card.title);
     setcategoryCart(card.category);
     let coverct = new Date(card.time);
-    coverct = dateAdapted(coverct);
+    coverct = DateDisplay(coverct);
     settimeDate(coverct);
   }, []);
 
@@ -115,7 +115,7 @@ const Card = ({ data, card, isNewCard, isChallengeWindow }) => {
         level: difficult,
       })
     );
-    settimeDate(dateAdapted(timeDate.data));
+    settimeDate(DateDisplay(timeDate.data));
   };
 
   const addTodosDone = () => {

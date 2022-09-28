@@ -1,39 +1,40 @@
-import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
-import userSlice from './user/slice';
-import todosAll from './todos/todosSlice';
-import {
-  persistStore,
-  persistReducer,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from 'redux-persist';
+import { combineReducers } from 'redux';
+import usersReducer from '../slices/users';
+import cardsReducer from '../slices/cards';
+import { persistReducer } from 'redux-persist';
+import { getPersistConfig } from 'redux-deep-persist';
+import localStorage from 'redux-persist/lib/storage';
 import storage from 'redux-persist/lib/storage';
 
-const userPersistConfig = {
-  key: 'user',
-  storage,
-  whitelist: ['token'],
+const appReducers = combineReducers({
+  users: usersReducer,
+  cards: cardsReducer,
+});
+
+const reducers = (state, action) => {
+  if (action.type === 'users/logout/pending') {
+    storage.removeItem('persist:root');
+    return appReducers(undefined, action);
+  }
+  return appReducers(state, action);
 };
 
-const rootReducer = combineReducers({
-  todos: todosAll,
-  user: persistReducer(userPersistConfig, userSlice),
+const persistConfig = getPersistConfig({
+  key: 'root',
+  storage: localStorage,
+  blacklist: ['users.loading'],
+  rootReducer: reducers,
 });
 
-export const store = configureStore({
-  reducer: rootReducer,
+const persistedReducer = persistReducer(persistConfig, reducers);
+
+const store = configureStore({
+  reducer: persistedReducer,
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
+      serializableCheck: false,
     }),
-  devTools: process.env.NODE_ENV === 'development',
 });
 
-export const persistor = persistStore(store);
+export default store;
