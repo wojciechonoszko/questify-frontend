@@ -1,4 +1,4 @@
-import { Route, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import authSelectors from '../Redux/auth/auth-selectors';
 /**
@@ -8,10 +8,17 @@ import authSelectors from '../Redux/auth/auth-selectors';
 export default function PrivateRoute({ redirectTo, children, ...routeProps }) {
   const getIsAuthenticated = useSelector(authSelectors.getIsAuthenticated);
 
-  return (
-    <Route {...routeProps}>
-      {getIsAuthenticated ? children : <Navigate replace to={redirectTo} />}
-      
-    </Route>
-  );
+    return (
+      <Routes>
+        <Route {...routeProps}>
+          {/* <>
+            {getIsAuthenticated ? (
+              children
+            ) : (
+              <Navigate replace to={redirectTo} />
+            )}
+          </> */}
+        </Route>
+      </Routes>
+    );
 }

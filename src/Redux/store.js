@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
   persistReducer,
@@ -15,13 +15,6 @@ import cardsReducers from './cards/cardsReducers';
 import authReducer from './auth/auth-reducers';
 import notifReducer from './notifReducers';
 
-const middleware = [
-  ...getDefaultMiddleware({
-    serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    },
-  }),
-];
 
 const authPersistConfig = {
   key: 'auth',
@@ -35,11 +28,17 @@ const store = configureStore({
     auth: persistReducer(authPersistConfig, authReducer),
     notification: notifReducer,
   },
-  middleware: middleware,
+  
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
   devTools: process.env.NODE_ENV === 'development',
 });
 
 const persistor = persistStore(store);
 
-const entireStore = { store, persistor };
-export default entireStore;
+const Store = { store, persistor };
+export default Store;

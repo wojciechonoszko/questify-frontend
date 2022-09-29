@@ -1,7 +1,7 @@
 import axios from 'axios';
 import cardsActions from './cardsActions';
 
-axios.defaults.baseURL = 'https://goit23-project.herokuapp.com/';
+axios.defaults.baseURL = 'https://herokuapp.com/';
 
 const fetchActiveCards = () => dispatch => {
   dispatch(cardsActions.fetchActiveCardsRequest());

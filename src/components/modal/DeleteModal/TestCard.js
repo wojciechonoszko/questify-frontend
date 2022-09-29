@@ -7,7 +7,7 @@ import cardsOperations from '../../../Redux/cards/cardsOperations';
 
 import CompletedCard from '../../CompletedCard/CompletedCard';
 
-import s from './DeleteModal.module.css';
+import styles from './DeleteModal.module.css';
 import './DeleteModalAnimation.css';
 
 import Modal from './TestModal';
@@ -19,9 +19,8 @@ export default function TestCard({
   categorie,
   date,
   text,
-  // isCompleted,
 }) {
-  // Это нужно добавить в компонент Карточка
+ 
   const [showModal, setShowModal] = useState(false);
   const toggleModal = useCallback(() => {
     setShowModal(prevShowModal => !prevShowModal);
@@ -45,19 +44,16 @@ export default function TestCard({
     setIsCompleted(prevIsCompleted => !prevIsCompleted);
   }, []);
 
-  const classList = isCompleted ? s.animCard : s.card;
+  const classList = isCompleted ? styles.animCard : styles.card;
 
   return (
-    <div className={s.mainBox}>
+    <div className={styles.mainBox}>
       <div className={classList}>
-        {/* Тут будет разметка карточки */}
+        
         <div>
-          {/* Это тестовая кнопка для открытия модалки  */}
           <button type="button" onClick={toggleModal}>
             show modal
           </button>
-
-          {/* Это тестовая кнопка для открытия completed card  */}
           <button type="button" onClick={toggleCompleted}>
             show completed
           </button>
@@ -96,7 +92,7 @@ export default function TestCard({
         classNames="anim"
         timeout={1000}
       >
-        <div className={s.anim}></div>
+        <div className={styles.anim}></div>
       </CSSTransition>
     </div>
   );

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import s from './PickerPopup.module.css';
+import styles from './PickerPopup.module.css';
 
 import '../modal/DeleteModal/DeleteModalAnimation.css';
 
@@ -22,15 +22,15 @@ export default function PickerPopup({ children, onClose }) {
     };
   }, [onClose]);
 
-  const handleBackdropClick = e => {
-    if (e.currentTarget === e.target) {
+  const handleBackdropClick = event => {
+    if (event.currentTarget === event.target) {
       onClose();
     }
   };
 
   return (
     <>
-      <div className={s.backdrop} onClick={handleBackdropClick}></div>
+      <div className={styles.backdrop} onClick={handleBackdropClick}></div>
       <CSSTransition
         in={true}
         appear={true}
