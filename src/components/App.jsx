@@ -1,16 +1,16 @@
-export const App = (props) => {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-      }}
-    >
-      {props.children}
-    </div>
-  );
-};
+// export const App = (props) => {
+//   return (
+//     <div
+//       style={{
+//         display: 'flex',
+//         flexDirection: 'column',
+//         justifyContent: 'center',
+//       }}
+//     >
+//       {props.children}
+//     </div>
+//   );
+// };
 
 
 // import { Suspense, lazy, useEffect } from 'react'
@@ -89,6 +89,22 @@ export const App = (props) => {
 //     </div>
 //   )
 // }
+
+import { Routes, Route } from "react-router-dom";
+import PageMain from "../pages/main/main";
+import LandingPage from "../pages/LandingPage/LandingPage";
+
+export const App = () => {
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<PageMain />} />
+        <Route path="/auth" element={<LandingPage />} />
+        {/* <Route path="/auth/:verifyToken" element={<VerificationPage />} /> */}
+      </Routes>
+    </div>
+  );
+};
 
 
 // import React from 'react';

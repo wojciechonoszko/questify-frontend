@@ -1,4 +1,6 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import AddCard from '../../components/modal/modal'
+import Header from '../../components/header/header'
 
 import {
   Main,
@@ -15,6 +17,7 @@ import {
 const PageMain = () => { 
   return (
     <Main>
+      <Header/>
       <SectionTitle>TODAY</SectionTitle>
       <Section>
         
@@ -38,6 +41,7 @@ const PageMain = () => {
           </Section>
         </DoneTaskDetails>
       </DoneTaskDiv>
+      <AddCard />
     </Main>
   );
 };

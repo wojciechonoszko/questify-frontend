@@ -5,10 +5,11 @@ export default function Loader({ size }) {
   return (
     <Audio
       className={styles.containerLoader}
-      type="ThreeDots"
       color="#00d7ff"
       height={size}
       width={size}
+      radius="9"
+      ariaLabel="loading"
     />
   );
 }
