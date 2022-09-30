@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import Icon from '../Icon';
-import DeleteModal from '../modal/DeleteModal/DeleteModal';
+import DeleteModal from '../modalTemp/DeleteModal/DeleteModal';
 import cardsOperations from '../../Redux/cards/cardsOperations';
 
 import styles from './StaticCard.module.css';

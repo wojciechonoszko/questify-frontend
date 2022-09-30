@@ -91,14 +91,14 @@
 // }
 
 import { Routes, Route } from "react-router-dom";
-import PageMain from "../pages/main/main";
+import MainPage from "../pages/Main/main";
 import LandingPage from "../pages/LandingPage/LandingPage";
 
 export const App = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<PageMain />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/auth" element={<LandingPage />} />
         {/* <Route path="/auth/:verifyToken" element={<VerificationPage />} /> */}
       </Routes>

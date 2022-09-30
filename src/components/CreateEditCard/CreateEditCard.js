@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import styles from './CreateEditCard.module.css';
-import DeleteModal from '../modal/DeleteModal/DeleteModal';
+import DeleteModal from '../modalTemp/DeleteModal/DeleteModal';
 import CompletedCard from '../CompletedCard/CompletedCard';
 import DateTimePicker from '../DateTimePicker/DateTimePicker';
 import OptionsPicker from '../OptionsPicker/OptionsPicker';
