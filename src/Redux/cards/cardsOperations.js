@@ -1,7 +1,8 @@
 import axios from 'axios';
 import cardsActions from './cardsActions';
 
-axios.defaults.baseURL = 'https://herokuapp.com/';
+// axios.defaults.baseURL = 'https://herokuapp.com/';
+axios.defaults.baseURL = 'http://localhost:8155';
 
 const fetchActiveCards = () => dispatch => {
   dispatch(cardsActions.fetchActiveCardsRequest());
@@ -23,7 +24,7 @@ const fetchDoneCards = () => dispatch => {
   dispatch(cardsActions.fetchDoneCardsRequest());
 
   axios
-    .get('cards?isCompleted=true')
+    .get('tasks?isCompleted=true')
     .then(({ data }) =>
       dispatch(cardsActions.fetchDoneCardsSuccess(data.result.cards))
     )

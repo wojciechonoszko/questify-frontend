@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {App} from 'components/App';
 
-import PageHeader from 'components/header/header';
-import PageMain from 'pages/Main/main';
-import LandingPage from 'pages/LandingPage/LandingPage';
+// import PageHeader from 'components/header/header';
+// import PageMain from 'pages/Main/main';
+// import LandingPage from 'pages/LandingPage/LandingPage';
 import './index.css';
 
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import Store from './Redux/store';
 
-import Card from 'components/Card/Card';
+// import Card from 'components/Card/Card';
 
 
 
@@ -20,10 +20,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={Store.store}>
       <BrowserRouter>
         <App>
-          <Card />
+          {/* <Card />
           <PageHeader />
           <PageMain />
-          <LandingPage />
+          <LandingPage /> */}
         </App>
       </BrowserRouter>
     </Provider>

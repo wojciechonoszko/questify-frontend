@@ -140,8 +140,8 @@ export default function MainPage() {
       {/* {isLoading && (
         <Modal>
           <Loader size={100} />
-        </Modal> */}
-      {/* )} */}
+        </Modal>
+      )} */}
       <div className={s.headerWrapper}>
         <Header />
       </div>
