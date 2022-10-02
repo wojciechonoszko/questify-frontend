@@ -1,13 +1,14 @@
 import axios from 'axios';
 import cardsActions from './cardsActions';
 
-// axios.defaults.baseURL = 'https://herokuapp.com/';
+// axios.defaults.baseURL = 'https://questify-goit-poland.herokuapp.com/';
+//axios.defaults.baseURL = 'https://goit23-project.herokuapp.com/';
 axios.defaults.baseURL = 'http://localhost:8155';
 
 const fetchActiveCards = () => dispatch => {
   dispatch(cardsActions.fetchActiveCardsRequest());
   axios
-    .get('cards?isCompleted=false')
+    .get('task?isCompleted=false')
     .then(({ data }) =>
       dispatch(cardsActions.fetchActiveCardsSuccess(data.result.cards))
     )
@@ -50,7 +51,7 @@ const addCard =
     dispatch(cardsActions.addCardRequest());
 
     axios
-      .post('cards', card)
+      .post('task', card)
       .then(({ data }) => dispatch(cardsActions.addCardSuccess(data.result)))
       .catch(err =>
         dispatch(
@@ -63,7 +64,7 @@ const editCard = (cardId, card) => dispatch => {
   dispatch(cardsActions.editCardRequest());
 
   axios
-    .put(`cards/${cardId}`, card)
+    .put(`task/:${cardId}`, card)
     .then(({ data }) => dispatch(cardsActions.editCardSuccess(data.result)))
     .catch(err =>
       dispatch(
@@ -76,7 +77,7 @@ const deleteCard = cardId => dispatch => {
   dispatch(cardsActions.deleteCardRequest());
 
   axios
-    .delete(`cards/${cardId}`)
+    .delete(`task/${cardId}`)
     .then(() => dispatch(cardsActions.deleteCardSuccess(cardId)))
     .catch(err =>
       dispatch(

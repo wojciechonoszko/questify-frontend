@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authActions from './auth-actions';
 
-axios.defaults.baseURL = 'https://herokuapp.com/';
+axios.defaults.baseURL = 'https://questify-goit-poland.herokuapp.com/';
 
 const token = {
   set(token) {
