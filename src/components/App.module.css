@@ -1,3 +1,11 @@
 .notif {
   top: 60px;
 }
+
+.welcome {
+  margin:auto;
+  background-color: yellow;
+  color: pink;
+  font-size: 24px;
+  width: fit-content;
+}

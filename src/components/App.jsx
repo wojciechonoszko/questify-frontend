@@ -90,22 +90,48 @@
 //   )
 // }
 
-import { Routes, Route } from "react-router-dom";
-import MainPage from "../pages/Main/main";
-import LandingPage from "../pages/LandingPage/LandingPage";
+import React from 'react';
+import styles from "./App.module.css";
+// import { Routes, Route } from "react-router-dom";
+// import MainPage from "../pages/Main/main";
+// import LandingPage from "../pages/LandingPage/LandingPage";
 
-export const App = () => {
+// export const App = () => {
+//   return (
+//     <div>
+//       <Routes>
+//         <Route path="/" element={<MainPage />} />
+//         <Route path="/auth" element={<LandingPage />} />
+//         {/* <Route path="/auth/:verifyToken" element={<VerificationPage />} /> */}
+//       </Routes>
+//     </div>
+//   );
+// };
+
+
+function App() {
+  const [data, setData] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch("http://localhost:8155/task/633a7bf776c004d39b58664d")
+      .then((res) =>  res.json())
+      .then((data) => {
+        setData(data.message);
+      });
+  });
+
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/auth" element={<LandingPage />} />
-        {/* <Route path="/auth/:verifyToken" element={<VerificationPage />} /> */}
-      </Routes>
+    <div className="App">
+      <header className="App-header">
+        <div className={styles.welcome}> 
+          {!data ? "... jescze nie polaczono z serverem" : data}
+        </div>
+      </header>
     </div>
-  );
-};
+  )
+  }
 
+export default App;
 
 // import React from 'react';
 // import { useEffect, lazy, Suspense } from 'react';

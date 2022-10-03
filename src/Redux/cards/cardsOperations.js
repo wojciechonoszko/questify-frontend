@@ -8,7 +8,8 @@ axios.defaults.baseURL = 'http://localhost:8155';
 const fetchActiveCards = () => dispatch => {
   dispatch(cardsActions.fetchActiveCardsRequest());
   axios
-    .get('task?isCompleted=false')
+    // .get('task/all?isCompleted=false')
+    .get('task/all')
     .then(({ data }) =>
       dispatch(cardsActions.fetchActiveCardsSuccess(data.result.cards))
     )
@@ -25,7 +26,8 @@ const fetchDoneCards = () => dispatch => {
   dispatch(cardsActions.fetchDoneCardsRequest());
 
   axios
-    .get('tasks?isCompleted=true')
+   // .get('task/all?isCompleted=true')
+    .get('task/all')
     .then(({ data }) =>
       dispatch(cardsActions.fetchDoneCardsSuccess(data.result.cards))
     )
@@ -51,7 +53,7 @@ const addCard =
     dispatch(cardsActions.addCardRequest());
 
     axios
-      .post('task', card)
+      .post('task/add', card)
       .then(({ data }) => dispatch(cardsActions.addCardSuccess(data.result)))
       .catch(err =>
         dispatch(
