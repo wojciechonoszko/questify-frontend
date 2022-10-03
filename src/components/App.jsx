@@ -91,7 +91,7 @@
 // }
 
 import { Routes, Route } from "react-router-dom";
-import PageMain from "../pages/main/main";
+import PageMain from "../pages/Main/main";
 import LandingPage from "../pages/LandingPage/LandingPage";
 
 export const App = () => {
