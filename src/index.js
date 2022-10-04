@@ -16,7 +16,7 @@ import Store from './Redux/store';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+   <React.StrictMode>
     <Provider store={Store.store}>
       <BrowserRouter>
         <App>
@@ -24,5 +24,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </App>
       </BrowserRouter>
     </Provider>
-  </React.StrictMode>
+   </React.StrictMode>
 );

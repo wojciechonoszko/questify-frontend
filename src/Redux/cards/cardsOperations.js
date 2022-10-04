@@ -8,10 +8,10 @@ axios.defaults.baseURL = 'http://localhost:8155';
 const fetchActiveCards = () => dispatch => {
   dispatch(cardsActions.fetchActiveCardsRequest());
   axios
-    // .get('task/all?isCompleted=false')
-    .get('task/all')
+     .get('task/all?isCompleted=false')
+    // .get('task/all')
     .then(({ data }) =>
-      dispatch(cardsActions.fetchActiveCardsSuccess(data.result.cards))
+      dispatch(cardsActions.fetchActiveCardsSuccess(data))
     )
     .catch(err =>
       dispatch(
@@ -26,10 +26,10 @@ const fetchDoneCards = () => dispatch => {
   dispatch(cardsActions.fetchDoneCardsRequest());
 
   axios
-   // .get('task/all?isCompleted=true')
-    .get('task/all')
+    .get('task/all?isCompleted=true')
+    // .get('task/all')
     .then(({ data }) =>
-      dispatch(cardsActions.fetchDoneCardsSuccess(data.result.cards))
+      dispatch(cardsActions.fetchDoneCardsSuccess(data))
     )
     .catch(err =>
       dispatch(
@@ -54,7 +54,7 @@ const addCard =
 
     axios
       .post('task/add', card)
-      .then(({ data }) => dispatch(cardsActions.addCardSuccess(data.result)))
+      .then(({ data }) => dispatch(cardsActions.addCardSuccess(data)))
       .catch(err =>
         dispatch(
           cardsActions.addCardError(err.response?.data?.message || err.message)
@@ -62,12 +62,13 @@ const addCard =
       );
   };
 
-const editCard = (cardId, card) => dispatch => {
+const editCard = (id, card) => dispatch => {
   dispatch(cardsActions.editCardRequest());
 
   axios
-    .put(`task/:${cardId}`, card)
-    .then(({ data }) => dispatch(cardsActions.editCardSuccess(data.result)))
+    .put(`task/${id}`, card)
+    // .put(`task/633b1096a4a3e87195074205`, card)
+    .then(({ data }) => dispatch(cardsActions.editCardSuccess(data)))
     .catch(err =>
       dispatch(
         cardsActions.editCardError(err.response?.data?.message || err.message)
