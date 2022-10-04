@@ -9,6 +9,7 @@ import OptionsPicker from '../OptionsPicker/OptionsPicker';
 import Icon from '../Icon';
 import cardsOperations from '../../Redux/cards/cardsOperations';
 import cardActions from '../../Redux/cards/cardsActions';
+import { v4 as uuidv4 } from 'uuid';
 
 const TITLES = {
   EDIT_CHALLENGE: 'EDIT CHALLENGE',

@@ -41,6 +41,7 @@ import resetNotification from '../Redux/notifAction'
 import authOperations from '../Redux/auth/auth-operations'
 import MainPage from '../pages/Main/main'
 import LandingPage from '../pages/LandingPage/LandingPage'
+import Landing from '../pages/AuthPage/AuthPage'
 
 // import Loader from './Components/Loader/Loader'
 import Modal from './Modal/Modal'
@@ -90,7 +91,7 @@ export default function App() {
         
           <Routes>
             <Route path="/" element={<MainPage />} />
-            <Route path="/auth" element={<LandingPage />} />
+            <Route path="/auth" element={<Landing />} />
           </Routes>
           {/* <PrivateRoute exact path="/" redirectTo="/auth">
             <MainPage />

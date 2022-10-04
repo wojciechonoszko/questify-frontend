@@ -8,10 +8,10 @@ axios.defaults.baseURL = 'http://localhost:8155';
 const fetchActiveCards = () => dispatch => {
   dispatch(cardsActions.fetchActiveCardsRequest());
   axios
-     .get('task/all?isCompleted=false')
-    // .get('task/all')
+    .get('cards?isCompleted=false')
+    //  .get('cards/')
     .then(({ data }) =>
-      dispatch(cardsActions.fetchActiveCardsSuccess(data))
+      dispatch(cardsActions.fetchActiveCardsSuccess(data.result.cards))
     )
     .catch(err =>
       dispatch(
@@ -26,10 +26,10 @@ const fetchDoneCards = () => dispatch => {
   dispatch(cardsActions.fetchDoneCardsRequest());
 
   axios
-    .get('task/all?isCompleted=true')
-    // .get('task/all')
+    .get('cards?isCompleted=true')
+    //  .get('cards/')
     .then(({ data }) =>
-      dispatch(cardsActions.fetchDoneCardsSuccess(data))
+      dispatch(cardsActions.fetchDoneCardsSuccess(data.result.cards))
     )
     .catch(err =>
       dispatch(
@@ -53,8 +53,8 @@ const addCard =
     dispatch(cardsActions.addCardRequest());
 
     axios
-      .post('task/add', card)
-      .then(({ data }) => dispatch(cardsActions.addCardSuccess(data)))
+      .post('cards', card)
+      .then(({ data }) => dispatch(cardsActions.addCardSuccess(data.result)))
       .catch(err =>
         dispatch(
           cardsActions.addCardError(err.response?.data?.message || err.message)
@@ -62,13 +62,13 @@ const addCard =
       );
   };
 
-const editCard = (id, card) => dispatch => {
+const editCard = (cardId, card) => dispatch => {
   dispatch(cardsActions.editCardRequest());
 
   axios
-    .put(`task/${id}`, card)
+    .put(`cards/${cardId}`, card)
     // .put(`task/633b1096a4a3e87195074205`, card)
-    .then(({ data }) => dispatch(cardsActions.editCardSuccess(data)))
+    .then(({ data }) => dispatch(cardsActions.editCardSuccess(data.result)))
     .catch(err =>
       dispatch(
         cardsActions.editCardError(err.response?.data?.message || err.message)
@@ -80,7 +80,7 @@ const deleteCard = cardId => dispatch => {
   dispatch(cardsActions.deleteCardRequest());
 
   axios
-    .delete(`task/${cardId}`)
+    .delete(`cards/${cardId}`)
     .then(() => dispatch(cardsActions.deleteCardSuccess(cardId)))
     .catch(err =>
       dispatch(
