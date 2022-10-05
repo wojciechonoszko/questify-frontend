@@ -59,17 +59,17 @@
 
 
 import { Suspense, lazy, useEffect } from 'react'
-import { Switch, NavLink, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify'
 
 import resetNotification from '../Redux/notifAction'
 import PrivateRoute from './PrivateRoute'
-import PublicRoute from './PublicRoute'
+// import PublicRoute from './PublicRoute'
 import authOperations from '../Redux/auth/auth-operations'
 
 import Loader from './Loader/Loader'
-import Modal from './Modal/Modal'
+// import Modal from './Modal/Modal'
 
 import 'react-toastify/dist/ReactToastify.css'
 import s from './App.module.css'
@@ -124,6 +124,8 @@ export default function App() {
           />
           
           <Route path="/auth" element={<AuthPage />} />
+
+          <Route path="/auth/:verifyToken" element={<VerificationPage />} />
           
           {/* <Route path="/" element={<MainPage />} />
           <Route path="/auth" element={<Landing />} /> */}
