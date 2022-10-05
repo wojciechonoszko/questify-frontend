@@ -9,9 +9,10 @@ const fetchActiveCards = () => dispatch => {
   dispatch(cardsActions.fetchActiveCardsRequest());
   axios
     .get('cards?isCompleted=false')
-    //  .get('cards/')
+    // .get('task/all?isCompleted=false')
     .then(({ data }) =>
       dispatch(cardsActions.fetchActiveCardsSuccess(data.result.cards))
+      // dispatch(cardsActions.fetchActiveCardsSuccess(data))
     )
     .catch(err =>
       dispatch(
@@ -27,7 +28,7 @@ const fetchDoneCards = () => dispatch => {
 
   axios
     .get('cards?isCompleted=true')
-    //  .get('cards/')
+    // .get('task/all?isCompleted=true')
     .then(({ data }) =>
       dispatch(cardsActions.fetchDoneCardsSuccess(data.result.cards))
     )

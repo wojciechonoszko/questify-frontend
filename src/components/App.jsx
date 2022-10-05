@@ -65,7 +65,9 @@ import { ToastContainer, toast } from 'react-toastify'
 
 import resetNotification from '../Redux/notifAction'
 import PrivateRoute from './PrivateRoute'
-//import PublicRoute from './PublicRoute'
+
+// import PublicRoute from './PublicRoute'
+
 import authOperations from '../Redux/auth/auth-operations'
 
 import Loader from './Loader/Loader'
@@ -124,6 +126,7 @@ export default function App() {
           />
           
           <Route path="/auth" element={<AuthPage />} />
+
           <Route path="/auth/:verifyToken" element={<VerificationPage />} />
           
           {/* <Route path="/" element={<MainPage />} />
