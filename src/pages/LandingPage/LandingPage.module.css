@@ -3,7 +3,6 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   background-image: url("../../../assets/images/landing_page_bg_mobile.png");
   background-repeat: no-repeat;
   background-position: bottom;
@@ -16,14 +15,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    justify-content: left;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .landingPage {
+    align-items: center;
     background-image: url("../../../assets/images/landing_page_bg.png");
     background-repeat: no-repeat;
-    justify-content: flex-start;
-    padding-left: 12%;
   }
 }
