@@ -74,9 +74,9 @@ import CardList from '../../components/CardList/CardList'
 import Header from '../../components/header/header';
 import Icon from '../../components/Icon'
 import TodaySection from '../../components/TodaySection/TodaySection'
-import Modal from '../../components/Modal/Modal'
+// import Modal from '../../components/Modal/Modal'
 //import modal from '../../components/modalTemp/modal';
-import Loader from '../../components/Loader/Loader'
+// import Loader from '../../components/Loader/Loader'
 
 import cardsOperations from '../../Redux/cards/cardsOperations'
 import cardsSelectors from '../../Redux/cards/cardsSelectors'
@@ -113,7 +113,7 @@ export default function MainPage() {
   )
   const overdueCards = useSelector(cardsSelectors.getOverdueCards)
 
-  const isLoading = useSelector(cardsSelectors.getIsLoading)
+  // const isLoading = useSelector(cardsSelectors.getIsLoading)
 
   const todayCards = [
     ...getSorted(activeTodayCards),
@@ -137,11 +137,11 @@ export default function MainPage() {
 
   return (
     <div className={s.appWrapper}>
-      {isLoading && (
+      {/* {isLoading && (
         <Modal>
           <Loader size={100} />
         </Modal>
-      )}
+      )} */}
       <div className={s.headerWrapper}>
         <Header />
       </div>
