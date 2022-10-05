@@ -137,11 +137,11 @@ export default function MainPage() {
 
   return (
     <div className={s.appWrapper}>
-      {/* {isLoading && (
+      {isLoading && (
         <Modal>
           <Loader size={100} />
         </Modal>
-      )} */}
+      )}
       <div className={s.headerWrapper}>
         <Header />
       </div>

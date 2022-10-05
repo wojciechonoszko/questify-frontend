@@ -124,6 +124,7 @@ export default function App() {
           />
           
           <Route path="/auth" element={<AuthPage />} />
+          <Route path="/auth/:verifyToken" element={<VerificationPage />} />
           
           {/* <Route path="/" element={<MainPage />} />
           <Route path="/auth" element={<Landing />} /> */}
