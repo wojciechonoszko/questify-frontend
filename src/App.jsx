@@ -63,26 +63,26 @@ import { Routes, Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify'
 
-import resetNotification from '../Redux/notifAction'
-import PrivateRoute from './PrivateRoute'
+import resetNotification from './Redux/notifAction'
+import PrivateRoute from './components/PrivateRoute'
 // import PublicRoute from './PublicRoute'
-import authOperations from '../Redux/auth/auth-operations'
+import authOperations from './Redux/auth/auth-operations'
 
-import Loader from './Loader/Loader'
+import Loader from './components/Loader/Loader'
 // import Modal from './Modal/Modal'
 
 import 'react-toastify/dist/ReactToastify.css'
 import s from './App.module.css'
 
 const MainPage = lazy(() =>
-  import('../pages/Main/main' /* webpackChunkName: "MainPage"*/),
+  import('./pages/Main/main' /* webpackChunkName: "MainPage"*/),
 )
 const AuthPage = lazy(() =>
-  import('../pages/AuthPage/AuthPage' /* webpackChunkName: "AuthPage"*/),
+  import('./pages/AuthPage/AuthPage' /* webpackChunkName: "AuthPage"*/),
 )
 const VerificationPage = lazy(() =>
   import(
-    '../pages/VerificationPage/VerificationPage' /* webpackChunkName: "VerificationPage"*/
+    './pages/VerificationPage/VerificationPage' /* webpackChunkName: "VerificationPage"*/
   ),
 )
 
