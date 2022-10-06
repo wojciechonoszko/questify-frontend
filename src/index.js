@@ -18,7 +18,7 @@ import Store from './Redux/store';
 ReactDOM.createRoot(document.getElementById('root')).render(
    <React.StrictMode>
     <Provider store={Store.store}>
-      <BrowserRouter>
+      <BrowserRouter basename="/questify-frontend/">
         <App>
           
         </App>
