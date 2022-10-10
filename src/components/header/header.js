@@ -73,7 +73,7 @@ export default function PageHeader() {
             {name ? name.substr(0, 1).toUpperCase() : 'N'}
           </span>
         </div>
-        <span className={s.MenuName}>{name ? name : 'Name'}'s Quest Log</span>
+        <span className={s.MenuName}>{name ? name  : 'Name'}- you are in/out!</span>
       </div>
       <button
         type="button"
