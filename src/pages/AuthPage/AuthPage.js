@@ -29,11 +29,13 @@ export default function Landing() {
           quests and exciting challenges.
         </p>
 
-        {isLoading ? (
+        {isLoading ?
+          (
           <Modal>
             <Loader size={100} />
           </Modal>
-        ) : registerSuccess ? (
+            ) : registerSuccess ? 
+            (
           <p className={styles.successRegText}>
             You have successfully registered, go to your email to confirm it
           </p>
