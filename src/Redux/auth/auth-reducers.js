@@ -24,18 +24,33 @@ const isAuthenticated = createReducer(false, {
   [authActions.logOutSuccess]: () => false,
 });
 
-const isLoading = createReducer(false, {
+// const isLoggedIn = createReducer(false, {
+//   [authActions.registerRequest]: () => true,
+//   [authActions.registerSuccess]: () => false,
+//   [authActions.registerError]: () => false,
+//   [authActions.logInRequest]: () => true,
+//   [authActions.logInSuccess]: () => false,
+//   [authActions.logInError]: () => false,
+//   [authActions.logOutRequest]: () => true,
+//   [authActions.logOutSuccess]: () => false,
+//   [authActions.logOutError]: () => false,
+//   [authActions.getCurrentUserRequest]: () => true,
+//   [authActions.getCurrentUserSuccess]: () => false,
+//   [authActions.getCurrentUserError]: () => false,
+// });
+
+const isLoggedIn = createReducer(false, {
   [authActions.registerRequest]: () => true,
   [authActions.registerSuccess]: () => false,
   [authActions.registerError]: () => false,
   [authActions.logInRequest]: () => true,
-  [authActions.logInSuccess]: () => false,
+  [authActions.logInSuccess]: () => true,
   [authActions.logInError]: () => false,
-  [authActions.logOutRequest]: () => true,
+  [authActions.logOutRequest]: () => false,
   [authActions.logOutSuccess]: () => false,
   [authActions.logOutError]: () => false,
   [authActions.getCurrentUserRequest]: () => true,
-  [authActions.getCurrentUserSuccess]: () => false,
+  [authActions.getCurrentUserSuccess]: () => true,
   [authActions.getCurrentUserError]: () => false,
 });
 
@@ -43,5 +58,5 @@ export default combineReducers({
   user,
   token,
   isAuthenticated,
-  isLoading,
+  isLoggedIn,
 });

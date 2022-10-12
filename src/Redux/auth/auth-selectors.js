@@ -1,11 +1,11 @@
 const getIsAuthenticated = state => state.auth.isAuthenticated;
-const getIsLoadding = state => state.auth.isLoading;
+const getIsLoggedIn = state => state.auth.isLoggedIn;
 const getUserName = state => state.auth.user;
 
 const authSelectors = {
   getIsAuthenticated,
   getUserName,
-  getIsLoadding,
+  getIsLoggedIn,
 };
 
 export default authSelectors;

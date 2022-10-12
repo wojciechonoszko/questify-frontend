@@ -115,14 +115,16 @@ export default function App() {
         }
       >
         <Routes>
-           <Route
+           {/* <Route
           path="/"
           element={
             <PrivateRoute>
               <MainPage />
             </PrivateRoute>
           }
-          />
+          /> */}
+
+          <Route path="/" element={<PrivateRoute />} />
           
          <Route path="/auth" element={<PublicRoute />} />
 

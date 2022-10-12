@@ -16,7 +16,7 @@ export default function Landing() {
     setShowSignup(!showSignup);
   };
 
-  const isLoading = useSelector(authSelectors.getIsLoadding);
+  const isLoading = useSelector(authSelectors.getIsLoggedIn);
 
   return (
     <div className={styles.containerLanding}>
